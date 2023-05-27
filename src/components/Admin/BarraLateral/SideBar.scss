@@ -16,7 +16,7 @@
 // }
 
 .sidebar {
-  background-color: #9b51e0;
+  background-color: #b08dd1;
   color: #fff;
   height: 100%;
   width: 250px;
@@ -70,7 +70,10 @@
 }
 
 .sidebar-nav a:hover {
-  background-color: rgb(40,116,252);
+  // background-color: rgb(40,116,252);
+  border-bottom: 9px solid rgb(40,116,252);
+  border-left: 9px solid rgb(40,116,252);
+  border-radius: 60px;
   cursor: pointer;
   color: black;
 }
