@@ -1,13 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import 'bootstrap/dist/css/bootstrap.css';
-import $ from 'jquery';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+import ReactDom from "react-dom/client";
+import 'semantic-ui-css/semantic.min.css';
+import './scss/global.scss';
+
+import {App} from './App';
+
+ReactDom.createRoot(document.getElementById('root')).render(
+    
+        <App/>
+    
 )
