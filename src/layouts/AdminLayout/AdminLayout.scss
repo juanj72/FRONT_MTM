@@ -9,10 +9,12 @@
 
     &__menu{
         grid-area: menu;
+        margin-bottom: 200px;
 
     }
     &__main-content{
         grid-area: content;
+        margin-left: 270px;
     }
 
 }
