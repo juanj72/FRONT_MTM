@@ -1,5 +1,6 @@
 import './LoginAdmin.scss';
 import {LoginForm} from '../../../components/Admin'
+import imagen from '../../../assets/mtm_logo.jpg'
 
 
 export const LoginAdmin = () => {
@@ -7,7 +8,9 @@ export const LoginAdmin = () => {
     <>
         <div className='login-admin'>
           <div className='login-admin__content'>
-            <h1>Wallet Ucc</h1>
+           
+            <img src={imagen} alt="" />
+            <h1>Iniciar sesión</h1>
             <LoginForm/>
           </div>
         </div>

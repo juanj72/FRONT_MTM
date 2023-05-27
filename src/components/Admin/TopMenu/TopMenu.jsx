@@ -19,7 +19,7 @@ export const TopMenu=()=>{
         <>
        <Menu fixed='top' className='top-menu-admin'>
         <Menu.Item className='top-menu-admin__logo'>
-            <p>Wallet UCC, {renderDatos()} </p>                
+            <img src="https://i0.wp.com/www.fundacionmtm.com/wp-content/uploads/2020/09/cropped-logocorazon.png?fit=32%2C32&ssl=1" className='logo' alt="" />               
         </Menu.Item>
         <Menu.Menu position='right'>
         <Menu.Item>Hola, {renderName()} </Menu.Item>
