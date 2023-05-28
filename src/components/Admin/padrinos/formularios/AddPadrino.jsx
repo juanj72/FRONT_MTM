@@ -2,19 +2,30 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {getToken} from '../../../../api/token'
 import {BASE_API} from '../../../../utils/constants'
-
+import React, { useState, useEffect } from 'react';
 
 export const AddPadrino=()=>{
+    const [data, setData] = useState([]);
+    const TOKEN = getToken()
     const formik = useFormik({
         initialValues: initialValues(),
         // validationSchema: Yup.object(validationSchema()),
         onSubmit:  (formValue) => {
             console.log("Datos enviados");
-            console.log(formValue);
+            console.log(formValue.correo);
 
-          
+           
+                const fetchData = async () => {
+                  const response = await fetch(`${BASE_API}/api/padrino/`,{method:'POST',headers:{'Content-Type': 'application/json',Authorization:`Bearer ${TOKEN}`},body:JSON.stringify(formValue)});
+                  const jsonData = await response.json();
+                  setData(jsonData);
+                };
+                fetchData();
+              
 
-         
+              console.log(data);
+                return <AddPadrino/>
+              
         }
 
     }); 
@@ -27,50 +38,55 @@ export const AddPadrino=()=>{
   <div className="mb-3">
     <label  className="form-label">Nombre</label>
     <input type="text" className="form-control"  aria-describedby="emailHelp" value={formik.values.nombre}
-                    onChange={formik.handleChange} name='nombre' />
+                    onChange={formik.handleChange} name='nombre'  error={formik.errors.nombre} />
     
   </div>
   <div className="mb-3">
     <label className="form-label">Apellido</label>
     <input type="text" className="form-control" value={formik.values.apellido}
-                    onChange={formik.handleChange} name='apellido'/>
+                    onChange={formik.handleChange} name='apellido' error={formik.errors.apellido} />
   </div>
 
   <div className="mb-3">
     <label  className="form-label">Tipo de persona</label>
     <input type="text" className="form-control" value={formik.values.tipo_persona}
-                    onChange={formik.handleChange} name='tipo_persona' />
+                    onChange={formik.handleChange} name='tipo_persona' error={formik.errors.tipo_persona} />
+  </div>
+  <div className="mb-3">
+    <label  className="form-label">Estrato</label>
+    <input type="number" className="form-control" value={formik.values.estrato}
+                    onChange={formik.handleChange} name='estrato' error={formik.errors.estrato} />
   </div>
   <div className="mb-3">
     <label  className="form-label">Fecha de nacimiento</label>
     <input type="date" className="form-control" value={formik.values.fecha_nacimiento}
-                    onChange={formik.handleChange}  name='fecha_nacimiento' />
+                    onChange={formik.handleChange}  name='fecha_nacimiento' error={formik.errors.fecha_nacimiento} />
   </div>
 
   <div className="mb-3">
     <label  className="form-label">Teléfono</label>
     <input type="number" className="form-control" value={formik.values.telefono}
-                    onChange={formik.handleChange} name='telefono' />
+                    onChange={formik.handleChange} name='telefono' error={formik.errors.telefono} />
   </div>
   <div className="mb-3">
     <label  className="form-label">Direccion</label>
     <input type="text" className="form-control"  value={formik.values.direccion}
-                    onChange={formik.handleChange}  name='direccion' />
+                    onChange={formik.handleChange}  name='direccion' error={formik.errors.direccion} />
   </div>
   <div className="mb-3">
     <label  className="form-label">Correo</label>
     <input type="email" className="form-control" value={formik.values.correo}
-                    onChange={formik.handleChange} name='correo' />
+                    onChange={formik.handleChange} name='correo' error={formik.errors.correo} />
   </div>
   <div className="mb-3">
     <label  className="form-label">Tiempo apadrinando(años)</label>
     <input type="number" className="form-control" value={formik.values.tiempo_apadrinando}
-                    onChange={formik.handleChange} name='tiempo_apadrinando' />
+                    onChange={formik.handleChange} name='tiempo_apadrinando' error={formik.errors.tiempo_apadrinando} />
   </div>
   <div className="mb-3">
     <label  className="form-label">Campo (sector de labora)</label>
     <input type="text" className="form-control" value={formik.values.campo}
-                    onChange={formik.handleChange} name='campo' />
+                    onChange={formik.handleChange} name='campo' error={formik.errors.campo} />
   </div>
  
   
@@ -87,6 +103,7 @@ const initialValues = () => {
         nombre: "",
         apellido: "",
         tipo_persona:"",
+        estrato:"",
         fecha_nacimiento:"",
         telefono:"",
         direccion:"",
@@ -99,15 +116,16 @@ const initialValues = () => {
 
 const validationSchema = () => {
     return {
-        nombre: Yup.string().required(true),
-        apellido: Yup.string().required(true),
-        tipo_persona: Yup.string().required(true),
-        fecha_nacimiento: Yup.date().required(true),
-        telefono: Yup.number().required(true),
-        direccion: Yup.string().required(true),
-        correo: Yup.string().email("error en dato").required(true),
-        tiempo_apadrinando: Yup.number().required(true),
-        campo: Yup.string().email("error en dato").required(true),
+        nombre: Yup.string(),
+        apellido: Yup.string(),
+        tipo_persona: Yup.string(length=255),
+        estrato:Yup.number(),
+        fecha_nacimiento: Yup.date(),
+        telefono: Yup.number(),
+        direccion: Yup.string(),
+        correo: Yup.string().email("error en dato"),
+        tiempo_apadrinando: Yup.number(),
+        campo: Yup.string().email("error en dato"),
 
         
     }

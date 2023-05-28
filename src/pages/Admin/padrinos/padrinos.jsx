@@ -15,10 +15,15 @@ export const padrinos =()=>{
         const jsonData = await response.json();
         setData(jsonData);
       };
+ 
+
       fetchData();
+  
     }, []);
 
         console.log(data);
+     
+
 
     return(
         <>
@@ -51,7 +56,7 @@ export const padrinos =()=>{
 
 
 
-        <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#exampleModal" > <BScons.BsPersonFillAdd/> Añadir</button>
+        <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#exampleModal" > <BScons.BsPersonFillAdd/> Agregar</button>
         <table className="table  table-hover">
             <thead>
               <tr>
