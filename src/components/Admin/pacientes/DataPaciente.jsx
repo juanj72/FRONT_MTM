@@ -19,6 +19,8 @@ export const DataPaciente = ()=>{
       fetchData();
     }, []);
 
+    console.log(data)
+
     return(
         <>
       
