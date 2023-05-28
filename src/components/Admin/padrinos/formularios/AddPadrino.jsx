@@ -2,10 +2,10 @@ import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {getToken} from '../../../../api/token'
 import {BASE_API} from '../../../../utils/constants'
-import React, { useState, useEffect } from 'react';
+
 
 export const AddPadrino=()=>{
-    const [data, setData] = useState([]);
+   
     const TOKEN = getToken()
     const formik = useFormik({
         initialValues: initialValues(),
@@ -23,8 +23,8 @@ export const AddPadrino=()=>{
                 fetchData();
               
 
-              console.log(data);
-                return <AddPadrino/>
+            
+             
               
         }
 
@@ -34,6 +34,7 @@ export const AddPadrino=()=>{
 
     return(
         <>
+      
         <form onSubmit={formik.handleSubmit}>
   <div className="mb-3">
     <label  className="form-label">Nombre</label>

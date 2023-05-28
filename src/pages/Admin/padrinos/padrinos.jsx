@@ -4,6 +4,7 @@ import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai'
 import {AddPadrino} from '../../../components/Admin/padrinos'
 
+
 export const padrinos =()=>{
     
     const [data, setData] = useState([]);
@@ -18,12 +19,16 @@ export const padrinos =()=>{
  
 
       fetchData();
-  
+   
     }, []);
+
+
+
+
 
         console.log(data);
      
-
+    
 
     return(
         <>
@@ -102,3 +107,5 @@ export const padrinos =()=>{
         </>
     )
 }
+
+
