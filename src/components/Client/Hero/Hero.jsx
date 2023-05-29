@@ -2,8 +2,7 @@ import React from 'react';
 import './Hero.scss';
 import { Canvas } from '@react-three/fiber';
 import { Flor } from '../Flor/Flor';
-import { OrbitControls } from '@react-three/drei';
-import { useThree } from '@react-three/fiber';
+
 
 
 
@@ -19,12 +18,10 @@ const Hero = () => {
         </h2>
       </div>
       <div className='content'>
-        <Canvas camera={{ position: [0, 0, 5] }}>
+        <Canvas camera={{ position: [8, 5, 5] }}>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
-            <Flor scale={15}/>
-            <OrbitControls />
-            console.log(camera.position);
+            <Flor scale={23}/>
         </Canvas>
       </div>
       
