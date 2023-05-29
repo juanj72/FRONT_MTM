@@ -1,11 +1,20 @@
 
 
 export const DetailModal=({paciente})=>{
+    let data ={}
+
+   if(paciente!=null){
+    // console.log(paciente)
+    data = paciente
+    console.log(data)
+   }
 
     return(
         <>
         <h1>Detalle Modal</h1>
-        {paciente.nombre}
+        {data.nombre}
+        {data.apellido}
+     
 
         
         </>

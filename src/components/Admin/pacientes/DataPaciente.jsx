@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import {getToken} from '../../../api/token'
 import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai';
-
+import {AddPaciente} from '../../../components/Admin/pacientes'
 import {DetailModal} from '../pacientes/popups'
 
 
-export const DataPaciente = ()=>{
+export const DataPaciente = ({props})=>{
 
  
 
@@ -15,21 +15,45 @@ export const DataPaciente = ()=>{
     const TOKEN = getToken()
   
     const DetallePaciente=(paciente)=>{
-      console.log(paciente)
+      
       setSelectedPaciente(paciente);
       
       }
 
     useEffect(() => {
-      const fetchData = async () => {
-        const response = await fetch('http://127.0.0.1:8000/api/paciente/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
-        const jsonData = await response.json();
-        setData(jsonData);
-      };
+   
       fetchData();
     }, []);
 
-    console.log(data)
+    const fetchData = async () => {
+      const response = await fetch('http://127.0.0.1:8000/api/paciente/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
+      const jsonData = await response.json();
+      setData(jsonData);
+      
+    };
+
+    
+    const eliminarPaciente=async (id)=>{
+      const TOKEN = getToken()
+    
+      const response = await fetch(`http://127.0.0.1:8000/api/paciente/${id}/`,{method:'DELETE',headers:{Authorization:`Bearer ${TOKEN}`}});
+      const response2 = await fetch('http://127.0.0.1:8000/api/paciente/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
+      const jsonData = await response2.json();
+      setData(jsonData);   
+    
+    }
+
+    const actualizar = async ()=>{
+      const response = await fetch('http://127.0.0.1:8000/api/paciente/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
+      const jsonData = await response.json();
+      setData(jsonData);
+      console.log("si funciona el props")
+    }
+
+    
+
+
+
 
     return(
         <>
@@ -52,6 +76,31 @@ export const DataPaciente = ()=>{
     </div>
   </div>
 </div>
+
+
+
+
+
+
+<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Agregar paciente</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      
+        <AddPaciente props={actualizar} />
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
 
 
       
@@ -102,12 +151,5 @@ export const DataPaciente = ()=>{
     )
 }
 
-const eliminarPaciente=async (id)=>{
-  const TOKEN = getToken()
 
-  const response = await fetch(`http://127.0.0.1:8000/api/paciente/${id}/`,{method:'DELETE',headers:{Authorization:`Bearer ${TOKEN}`}});
-        // const jsonData = await response.json();
-        // setData(jsonData);
-
-}
 

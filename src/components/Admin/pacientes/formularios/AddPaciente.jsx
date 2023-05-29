@@ -4,7 +4,7 @@ import {getToken} from '../../../../api/token'
 import {BASE_API} from '../../../../utils/constants'
 
 
-export const AddPaciente=(props)=>{
+export const AddPaciente=({props})=>{
     
     const TOKEN = getToken()
     const formik = useFormik({
@@ -23,11 +23,12 @@ export const AddPaciente=(props)=>{
                 fetchData();
 
 
-              
+            props()
+            initialValues()
 
             
              
-            console.log(props.pepe,'componente B')
+          
               
         }
 

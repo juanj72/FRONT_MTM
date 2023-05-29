@@ -5,7 +5,7 @@ import { BASE_API } from '../../../../utils/constants'
 
 
 
-export const AddFamiliar = () => {
+export const AddFamiliar = ({props}) => {
 
     const TOKEN = getToken()
     const formik = useFormik({
@@ -26,7 +26,7 @@ export const AddFamiliar = () => {
 
 
 
-            console.log(props.pepe, 'componente B')
+            console.log(props, 'componente B')
 
         }
 

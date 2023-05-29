@@ -13,14 +13,7 @@ export const padrinos =()=>{
     const TOKEN = getToken()
 
     useEffect(() => {
-      const fetchData = async () => {
-        const response = await fetch('http://127.0.0.1:8000/api/padrino/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
-        const jsonData = await response.json();
-        setData(jsonData);
-
-        console.log(jsonData)
-        
-      };
+     
       
 
       fetchData();
@@ -29,8 +22,24 @@ export const padrinos =()=>{
    
     }, []);
 
+    const fetchData = async () => {
+      const response = await fetch('http://127.0.0.1:8000/api/padrino/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
+      const jsonData = await response.json();
+      setData(jsonData);
 
+      console.log(jsonData)
+      
+    };
 
+    const actualizar = async()=>{
+
+      const response = await fetch('http://127.0.0.1:8000/api/padrino/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
+      const jsonData = await response.json();
+      setData(jsonData);
+
+    
+    
+    }
 
 
         console.log(data);
@@ -53,7 +62,7 @@ export const padrinos =()=>{
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
-      <AddPadrino pepe={actu} />
+      <AddPadrino pepe={actualizar} />
 
 
       </div>
@@ -116,14 +125,3 @@ export const padrinos =()=>{
 }
 
 
-const actualizar = async()=>{
-
-
-  
- 
-
-
-  return 'Hola desde A';
-
-
-}

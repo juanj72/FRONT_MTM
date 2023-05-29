@@ -11,13 +11,19 @@ export const DataFamiliar = ()=>{
     const TOKEN = getToken()
 
     useEffect(() => {
-      const fetchData = async () => {
-        const response = await fetch('http://127.0.0.1:8000/api/Familiar/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
-        const jsonData = await response.json();
-        setData(jsonData);
-      };
+    
       fetchData();
     }, []);
+
+    const fetchData = async () => {
+      const response = await fetch('http://127.0.0.1:8000/api/Familiar/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
+      const jsonData = await response.json();
+      setData(jsonData);
+    };
+
+    const actualizar=()=>{
+      fetchData();
+    }
 
     return (
         <>
@@ -31,7 +37,7 @@ export const DataFamiliar = ()=>{
       </div>
       <div className="modal-body">
       
-        <AddFamiliar/>
+        <AddFamiliar props={actualizar} />
 
       </div>
       

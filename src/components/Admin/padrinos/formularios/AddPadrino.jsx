@@ -25,7 +25,7 @@ export const AddPadrino = (props) => {
 
 
 
-      console.log(props.pepe, 'componente B')
+      props.pepe()
 
     }
 
