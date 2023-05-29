@@ -26,11 +26,17 @@ export const AddFamiliar = ({props}) => {
 
 
 
-            console.log(props, 'componente B')
+           props()
 
         }
 
     });
+
+
+   
+
+
+
 
 
     return (

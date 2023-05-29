@@ -4,6 +4,9 @@ import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai';
 import {AddPaciente} from '../../../components/Admin/pacientes'
 import {DetailModal,ModalEdit} from '../pacientes/popups'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import * as MDcons from 'react-icons/md';
 
 
 export const DataPaciente = ({props})=>{
@@ -13,6 +16,7 @@ export const DataPaciente = ({props})=>{
     const [data, setData] = useState([]);
     const [selectedPaciente, setSelectedPaciente] = useState(null);
     const TOKEN = getToken()
+    const MySwal = withReactContent(Swal)
   
     const DetallePaciente=(paciente)=>{
       
@@ -40,6 +44,18 @@ export const DataPaciente = ({props})=>{
       const response2 = await fetch('http://127.0.0.1:8000/api/paciente/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
       const jsonData = await response2.json();
       setData(jsonData);   
+
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
     
     }
 
@@ -132,29 +148,28 @@ export const DataPaciente = ({props})=>{
         <table className="table  table-hover">
             <thead>
               <tr>
-                <th scope="col">id</th>
+                
                 <th scope="col">Nombre</th>
                 <th scope="col">Apellido</th>
-                <th scope="col">Numero unico</th>
-                <th scope='col' >Fecha de inicio del tratamiento</th>
-                <th scope='col' >Fecha de ingreso</th>
+              
+        
                 <th scope='col' >Seguro funebre</th>
                 <th scope='col' >Correo</th>
                 <th scope='col' >Direccion</th>
                 <th scope='col' >Telefono</th>
                 <th scope='col' >Acción</th>
+                <th scope='col' >Familiar </th>
                 
               </tr>
             </thead>
             <tbody>
               {data.map(item => (
                 <tr key={item.id}>
-                  <td>{item.id}</td>
+                 
                   <td>{item.nombre}</td>
                   <td>{item.apellido}</td>
-                  <td>{item.nui}</td>
-                  <td>{item.fecha_inicio_tratamiento}</td>
-                  <td>{item.fecha_ingreso}</td>
+             
+                  
                   <td>{item.seguro_funebre}</td>
                   <td>{item.correo}</td>
                   <td>{item.direccion_residencia}</td>
@@ -162,6 +177,9 @@ export const DataPaciente = ({props})=>{
                   <td><button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#ModalEdit"  onClick={DetallePaciente.bind(null,item)} ><BScons.BsFillPencilFill/></button>
                   <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#DetalleModal" onClick={DetallePaciente.bind(null,item)} ><Aicons.AiFillEye/></button>
                   <button className='btn btn-danger' onClick={eliminarPaciente.bind(null,item.id)} ><BScons.BsFillTrashFill/></button>
+                  </td>
+                  <td> <button className='btn btn-info' altt="comunidad" ><MDcons.MdOutlineFamilyRestroom/></button> 
+                  <button className='btn btn-warning' alt="comunidad" ><MDcons.MdPersonAddAlt1/></button> 
                   </td>
                 
                 </tr>

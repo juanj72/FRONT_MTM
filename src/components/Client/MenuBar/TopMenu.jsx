@@ -5,7 +5,7 @@ export const TopMenu = () => {
     return (
         <>
             <nav className='homnav'>
-                <ul class="nav justify-content-center">
+                <ul class="nav justify-content-left homnav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>

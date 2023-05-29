@@ -19,7 +19,7 @@ export const ModalEdit=({props,actualizar})=>{
 
     const TOKEN = getToken()
     const formik = useFormik({
-        initialValues: initialValues(),
+        initialValues: initialValues(data.nombre),
         // validationSchema: Yup.object(validationSchema()),
         onSubmit:  (formValue) => {
             console.log("Datos enviados");
@@ -113,9 +113,9 @@ export const ModalEdit=({props,actualizar})=>{
     )
 }
 
-const initialValues = () => {
+const initialValues = (nombre) => {
     return {
-      nombre: "",
+      nombre: nombre,
       apellido: "",
       nui: "",
       fecha_inicio_tratamiento: "",

@@ -2,6 +2,7 @@ import {useAuth} from '../../hooks'
 import { Button } from 'semantic-ui-react';
 import './HomeAdmin.scss'
 
+
 export const HomeAdmin = () => {
   const {logout} = useAuth();
 

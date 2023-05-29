@@ -2,11 +2,15 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { getToken } from '../../../../api/token'
 import { BASE_API } from '../../../../utils/constants'
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export const AddPaciente = ({ props }) => {
 
   const TOKEN = getToken()
+  const MySwal = withReactContent(Swal)
+
+
   const formik = useFormik({
     initialValues: initialValues(),
     // validationSchema: Yup.object(validationSchema()),
@@ -24,7 +28,17 @@ export const AddPaciente = ({ props }) => {
 
 
       props()
-      initialValues()
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
 
 
 
