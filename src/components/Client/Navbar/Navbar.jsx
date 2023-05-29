@@ -6,8 +6,8 @@ const Header = () => {
     <div className='header'>
         <div className='navbar'>
             <a href='/' className='btn' id='nav1'>Inicio</a>
-            <a className='btn'id='nav2'>Pacientes</a>
-            <a className='btn'id='nav3'>Padrinos</a>
+            <a href='/pacientes' className='btn'id='nav2'>Pacientes</a>
+            <a href='/padrinos' className='btn'id='nav3'>Padrinos</a>
         </div>
         <button className='btn2'>
             <a href='/admin' className='btntext'>Ingresar</a>
