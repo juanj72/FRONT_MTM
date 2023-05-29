@@ -4,7 +4,7 @@ import {getToken} from '../../../../api/token'
 import {BASE_API} from '../../../../utils/constants'
 
 
-export const AddPadrino=(props)=>{
+export const AddPaciente=(props)=>{
     
     const TOKEN = getToken()
     const formik = useFormik({
@@ -16,11 +16,13 @@ export const AddPadrino=(props)=>{
 
            
                 const fetchData = async () => {
-                  const response = await fetch(`${BASE_API}/api/padrino/`,{method:'POST',headers:{'Content-Type': 'application/json',Authorization:`Bearer ${TOKEN}`},body:JSON.stringify(formValue)});
+                  const response = await fetch(`${BASE_API}/api/paciente/`,{method:'POST',headers:{'Content-Type': 'application/json',Authorization:`Bearer ${TOKEN}`},body:JSON.stringify(formValue)});
                   const jsonData = await response.json();
-                 
+                  console.log(jsonData)
                 };
                 fetchData();
+
+
               
 
             
@@ -50,30 +52,30 @@ export const AddPadrino=(props)=>{
   </div>
 
   <div className="mb-3">
-    <label  className="form-label">Tipo de persona</label>
-    <input type="text" className="form-control" value={formik.values.tipo_persona}
-                    onChange={formik.handleChange} name='tipo_persona' error={formik.errors.tipo_persona} />
+    <label  className="form-label">Nui</label>
+    <input type="number" className="form-control" value={formik.values.nui}
+                    onChange={formik.handleChange} name='nui' error={formik.errors.nui} />
   </div>
   <div className="mb-3">
-    <label  className="form-label">Estrato</label>
-    <input type="number" className="form-control" value={formik.values.estrato}
-                    onChange={formik.handleChange} name='estrato' error={formik.errors.estrato} />
+    <label  className="form-label">fecha_inicio_tratamiento</label>
+    <input type="date" className="form-control" value={formik.fecha_inicio_tratamiento}
+                    onChange={formik.handleChange} name='fecha_inicio_tratamiento' error={formik.fecha_inicio_tratamiento} />
   </div>
   <div className="mb-3">
-    <label  className="form-label">Fecha de nacimiento</label>
-    <input type="date" className="form-control" value={formik.values.fecha_nacimiento}
-                    onChange={formik.handleChange}  name='fecha_nacimiento' error={formik.errors.fecha_nacimiento} />
+    <label  className="form-label">Fecha de ingreso</label>
+    <input type="date" className="form-control" value={formik.values.fecha_ingreso}
+                    onChange={formik.handleChange}  name='fecha_ingreso' error={formik.errors.fecha_ingreso} />
   </div>
 
   <div className="mb-3">
-    <label  className="form-label">Teléfono</label>
-    <input type="number" className="form-control" value={formik.values.telefono}
-                    onChange={formik.handleChange} name='telefono' error={formik.errors.telefono} />
+    <label  className="form-label">Seguro funebre</label>
+    <input type="text" className="form-control" value={formik.values.seguro_funebre}
+                    onChange={formik.handleChange} name='seguro_funebre' error={formik.errors.seguro_funebre} />
   </div>
   <div className="mb-3">
-    <label  className="form-label">Direccion</label>
-    <input type="text" className="form-control"  value={formik.values.direccion}
-                    onChange={formik.handleChange}  name='direccion' error={formik.errors.direccion} />
+    <label  className="form-label">Telefono</label>
+    <input type="number" className="form-control"  value={formik.values.telefono}
+                    onChange={formik.handleChange}  name='telefono' error={formik.errors.telefono} />
   </div>
   <div className="mb-3">
     <label  className="form-label">Correo</label>
@@ -81,15 +83,11 @@ export const AddPadrino=(props)=>{
                     onChange={formik.handleChange} name='correo' error={formik.errors.correo} />
   </div>
   <div className="mb-3">
-    <label  className="form-label">Tiempo apadrinando(años)</label>
-    <input type="number" className="form-control" value={formik.values.tiempo_apadrinando}
-                    onChange={formik.handleChange} name='tiempo_apadrinando' error={formik.errors.tiempo_apadrinando} />
+    <label  className="form-label">Direccion</label>
+    <input type="text" className="form-control" value={formik.values.direccion_residencia}
+                    onChange={formik.handleChange} name='direccion_residencia' error={formik.errors.direccion_residencia} />
   </div>
-  <div className="mb-3">
-    <label  className="form-label">Campo (sector de labora)</label>
-    <input type="text" className="form-control" value={formik.values.campo}
-                    onChange={formik.handleChange} name='campo' error={formik.errors.campo} />
-  </div>
+ 
  
   
   <div className="modal-footer">
@@ -104,14 +102,14 @@ const initialValues = () => {
     return {
         nombre: "",
         apellido: "",
-        tipo_persona:"",
-        estrato:"",
-        fecha_nacimiento:"",
+        nui:"",
+        fecha_inicio_tratamiento:"",
+        fecha_ingreso:"",
+        seguro_funebre:"",
         telefono:"",
-        direccion:"",
         correo:"",
-        tiempo_apadrinando:"",
-        campo:"",
+        direccion_residencia:"",
+       
 
     };
 }

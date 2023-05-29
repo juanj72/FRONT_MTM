@@ -24,7 +24,7 @@ export const DataPaciente = ()=>{
     return(
         <>
       
-        <button className='btn btn-success' > <BScons.BsPersonFillAdd/> Añadir</button>
+        
         <table className="table  table-hover">
             <thead>
               <tr>

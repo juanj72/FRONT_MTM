@@ -5,8 +5,10 @@ import * as Aicons from 'react-icons/ai'
 import {AddPadrino} from '../../../components/Admin/padrinos'
 
 
+
+
 export const padrinos =()=>{
-    
+    const actu = null
     const [data, setData] = useState([]);
     const TOKEN = getToken()
 
@@ -15,10 +17,15 @@ export const padrinos =()=>{
         const response = await fetch('http://127.0.0.1:8000/api/padrino/',{method:'GET',headers:{Authorization:`Bearer ${TOKEN}`}});
         const jsonData = await response.json();
         setData(jsonData);
+
+        console.log(jsonData)
+        
       };
- 
+      
 
       fetchData();
+
+      
    
     }, []);
 
@@ -46,7 +53,7 @@ export const padrinos =()=>{
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
-      <AddPadrino/>
+      <AddPadrino pepe={actu} />
 
 
       </div>
@@ -79,7 +86,7 @@ export const padrinos =()=>{
               </tr>
             </thead>
             <tbody>
-              {data.map(item => (
+               { data.map(item => (
                 <tr key={item.id}>
                   <td>{item.id}</td>
                   <td>{item.nombre}</td>
@@ -109,3 +116,14 @@ export const padrinos =()=>{
 }
 
 
+const actualizar = async()=>{
+
+
+  
+ 
+
+
+  return 'Hola desde A';
+
+
+}
