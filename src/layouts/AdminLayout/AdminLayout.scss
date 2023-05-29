@@ -1,0 +1,20 @@
+.admin-layout{
+    width: 100%;
+    display: grid;
+    grid: 55px / 1fr;
+    grid-template-areas: 
+    "menu"
+    "content"
+    ;
+
+    &__menu{
+        grid-area: menu;
+        margin-bottom: 200px;
+
+    }
+    &__main-content{
+        grid-area: content;
+        margin-left: 270px;
+    }
+
+}
