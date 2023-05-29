@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.70.0",
+    "@react-three/fiber": "^8.13.0",
     "bootstrap": "^5.2.3",
+    "drei": "^2.2.21",
     "formik": "^2.2.9",
+    "gltfjsx": "^6.1.12",
+    "gsap": "^3.11.5",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
@@ -21,6 +26,7 @@
     "sass": "^1.62.1",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
+    "three": "^0.152.2",
     "yup": "^1.1.1"
   },
   "devDependencies": {

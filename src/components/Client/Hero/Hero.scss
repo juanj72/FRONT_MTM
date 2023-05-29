@@ -1,0 +1,183 @@
+.hero {
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    background-color: rgba(0, 0, 0, 0);
+    flex: 0 0 auto;
+    height: 600px;
+    left: 0px;
+    overflow: hidden;
+    position: absolute;
+    right: 0px;
+    top: 143px;
+}
+
+.pag {
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    flex: 0 0 auto;
+    height: 24px;
+    left: 82px;
+    position: absolute;
+    top: 55px;
+    white-space: pre-wrap;
+    width: 119px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+}
+
+.pag, p {
+    font-size: 20px;
+    font-family: 'IBM Plex Mono';
+    --framer-aspect-ratio-supported: auto;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    margin: 0px;
+    padding: 0px;
+    font-style: var(--framer-font-style, normal);
+    font-weight: var(--framer-font-weight, 400);
+    color: var(--framer-text-color, #000);
+    font-size: var(--framer-font-size, 20px);
+    letter-spacing: var(--framer-letter-spacing, 0);
+    text-transform: var(--framer-text-transform, none);
+    text-decoration: var(--framer-text-decoration, none);
+    line-height: var(--framer-line-height, 1.2em);
+    text-align: var(--framer-text-alignment, start);
+    --font-selector: R0Y7SUJNIFBsZXggTW9uby1yZWd1bGFy;
+}
+
+.titulo {
+    font-size: 288px;
+    font-family: 'Humane', sans-serif;
+    font-weight: bold;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    bottom: 0px;
+    flex: 0 0 auto;
+    height: 533px;
+    left: calc(50% - 960px);
+    position: absolute;
+    white-space: pre-wrap;
+    width: 1920px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    transform: none;
+}
+
+.titulo, h1 {
+    --framer-aspect-ratio-supported: auto;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    margin: 0px;
+    padding: 0px;
+    color: var(--framer-text-color, #000);
+    letter-spacing: var(--framer-letter-spacing, 0);
+    text-transform: var(--framer-text-transform, none);
+    text-decoration: var(--framer-text-decoration, none);
+    line-height: var(--framer-line-height, 1.2em);
+    text-align: var(--framer-text-alignment, start);
+    --font-selector: Q1VTVE9NO0h1bWFuZSBCb2xk;
+    --framer-font-family: "Humane Bold", sans-serif;
+    --framer-font-size: 288px;
+    --framer-letter-spacing: 0.01em;
+    --framer-line-height: 0.8em;
+    --framer-text-alignment: center;
+    --framer-text-transform: uppercase;
+}
+
+.cursiva {
+    font-size: 39px;
+    font-family: 'Biro', sans-serif;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    bottom: 68px;
+    flex: 0 0 auto;
+    height: 198px;
+    left: 1271px;
+    position: absolute;
+    white-space: pre-wrap;
+    width: 551px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+}
+
+.cursiva, h2 {
+    font-family: 'Biro', sans-serif;   
+    --framer-aspect-ratio-supported: auto;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    margin: 0px;
+    padding: 0px;
+    color: var(--framer-text-color, #000);
+    letter-spacing: var(--framer-letter-spacing, 0);
+    text-transform: var(--framer-text-transform, none);
+    text-decoration: var(--framer-text-decoration, none);
+    line-height: var(--framer-line-height, 1.2em);
+    text-align: var(--framer-text-alignment, start);
+    --font-selector: Q1VTVE9NO0Jpcm8gU2NyaXB0IHJlZHVjZWQgUmVndWxhcg==;
+    --framer-font-size: 39px;
+    --framer-line-height: 1.4em;
+}
+
+.content {
+    position: relative;
+    height: 819px;
+    width: 938px;
+    margin-top: 562px;
+  
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
