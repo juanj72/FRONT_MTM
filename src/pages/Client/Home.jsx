@@ -6,6 +6,7 @@ import About from "../../components/Client/About/About";
 import Galeria from "../../components/Client/Galeria/Galeria";
 import Card from "../../components/Client/Card/Card";
 import './Home.scss';
+import Footer from "../../components/Client/Footer/Footer";
 
 export const Home = () => {
 
@@ -17,6 +18,7 @@ export const Home = () => {
       <Card />
       <Mision />
       <Galeria />
+      <Footer />
     </>
   );
 };

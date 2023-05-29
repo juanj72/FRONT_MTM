@@ -3,7 +3,14 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  height: 100vh;
+  height: 140vh;
+  width: 100%;
+}
+
+.fondo {
+  background-image: url('../../../img/bg2.png');
+  background-size: cover;
+  background-position: left;
 }
 
 .gallery {
@@ -67,7 +74,7 @@
   font-weight: 900;
   margin: 0;
   padding: 0;
-  color: #000;
+  color: #ab77c5;
   text-align: center;
   letter-spacing: 0.1rem;
 }

@@ -1,0 +1,39 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e5e5e5;
+    height: 60px;
+    padding: 0 20px;
+    max-width: 100%;
+    margin: 20px auto;
+    font-family: "Aboreto", sans-serif;
+    z-index: 100;
+  }
+  
+  .footer-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-link {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-button {
+    padding: 8px 25px;
+    background-color: #fff;
+    border-radius: 30px;
+    border: none;
+    z-index: 100;
+  }
+  
+  .footer-link {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+  }
+  

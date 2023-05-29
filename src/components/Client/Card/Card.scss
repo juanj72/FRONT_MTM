@@ -1,18 +1,19 @@
 .home-container {
     width: 1920px;
-    height: 761px;
+    height: 40vh;
     position: relative;
     background: rgba(214, 214, 214, 0.27);
   
     .home-title {
-      width: 361.98px;
       height: 39px;
       position: absolute;
       left: 779.11px;
-      top: 19px;
-      font-size: 29px;
+      top: 25px;
+      font-size: 69px;
       text-align: center;
-      color: #0c71c3;
+      color: #ab77c5;
+      letter-spacing: 0.5rem;
+      font-family: "Humane", sans-serif;
     }
   
     .content-container {
@@ -20,7 +21,7 @@
       height: 158.19px;
       position: absolute;
       left: 240px;
-      top: 134px;
+      top: 160px;
       display: flex;
       justify-content: space-between;
   
@@ -35,14 +36,16 @@
           width: 119.89px;
           height: 24px;
           margin: 0 auto;
-          font-size: 18px;
+          font-size: 32px;
           text-align: center;
           text-transform: uppercase;
-          color: #0c71c3;
+          color: #ab77c5;
+          font-family: "Humane", sans-serif;
+          letter-spacing: 0.3rem;
         }
   
         .info-details {
-          margin-top: 10px;
+          margin-top: 32px;
   
           p {
             width: 327.79px;
@@ -50,6 +53,8 @@
             text-align: left;
             color: #666;
             margin-bottom: 5px;
+            font-family: 'Arial Nova', sans-serif;
+            text-align: justify;
           }
         }
       }

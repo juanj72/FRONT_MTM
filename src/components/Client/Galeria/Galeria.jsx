@@ -20,7 +20,7 @@ const Galeria = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container fondo">
       <div className="guerreros">
         <p className="guerrerostext">Guerreros valientes y fuertes</p>
       </div>
@@ -31,7 +31,6 @@ const Galeria = () => {
         <img className="gallery-image ver4" src="../src/img/image4.jpg" alt="Image 4" />
         <img className="gallery-image ver5" src="../src/img/image5.jpg" alt="Image 5" />
       </div>
-      
     </div>
   );
 };
