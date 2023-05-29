@@ -3,14 +3,20 @@ import {getToken} from '../../../api/token'
 import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai'
 import {AddPadrino} from '../../../components/Admin/padrinos'
-
+import {DetailModal} from '../../../components/Admin/padrinos'
 
 
 
 export const padrinos =()=>{
     const actu = null
     const [data, setData] = useState([]);
+    const [selectedPadrino, setSelectedPadrino] = useState(null);
     const TOKEN = getToken()
+
+    const detallepadrino = (padrino)=>{
+      setSelectedPadrino(padrino)
+    }
+
 
     useEffect(() => {
      
@@ -76,6 +82,23 @@ export const padrinos =()=>{
   </div>
 </div>
 
+<div className="modal fade" id="Detalle" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Detalle</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+     
+      <DetailModal padrino={selectedPadrino} />
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 
 
 
@@ -113,7 +136,7 @@ export const padrinos =()=>{
                   <td>{item.tiempo_apadrinando}</td>
                   <td>{item.campo}</td>
                    <td><button className='btn btn-success' ><BScons.BsFillPencilFill/></button>
-                  <button className='btn btn-primary'><Aicons.AiFillEye/></button>
+                  <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#Detalle" onClick={detallepadrino.bind(null,item)} ><Aicons.AiFillEye/></button>
                   <button className='btn btn-danger' onClick={eliminarPadrino.bind(null,item.id)} ><BScons.BsFillTrashFill/></button>
                   </td>
                 </tr>

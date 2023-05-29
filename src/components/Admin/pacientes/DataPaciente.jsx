@@ -3,7 +3,7 @@ import {getToken} from '../../../api/token'
 import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai';
 import {AddPaciente} from '../../../components/Admin/pacientes'
-import {DetailModal} from '../pacientes/popups'
+import {DetailModal,ModalEdit} from '../pacientes/popups'
 
 
 export const DataPaciente = ({props})=>{
@@ -49,6 +49,8 @@ export const DataPaciente = ({props})=>{
       setData(jsonData);
       console.log("si funciona el props")
     }
+
+   
 
     
 
@@ -104,6 +106,24 @@ export const DataPaciente = ({props})=>{
 </div>
 
 
+<div className="modal fade" id="ModalEdit" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      
+      <ModalEdit props={selectedPaciente} actualizar={actualizar} />
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -139,7 +159,7 @@ export const DataPaciente = ({props})=>{
                   <td>{item.correo}</td>
                   <td>{item.direccion_residencia}</td>
                   <td>{item.telefono}</td>
-                  <td><button className='btn btn-success' ><BScons.BsFillPencilFill/></button>
+                  <td><button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#ModalEdit"  onClick={DetallePaciente.bind(null,item)} ><BScons.BsFillPencilFill/></button>
                   <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#DetalleModal" onClick={DetallePaciente.bind(null,item)} ><Aicons.AiFillEye/></button>
                   <button className='btn btn-danger' onClick={eliminarPaciente.bind(null,item.id)} ><BScons.BsFillTrashFill/></button>
                   </td>
