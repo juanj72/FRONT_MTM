@@ -1,6 +1,13 @@
-export const DetailModal=()=>{
 
-    <>
-    <h1>modal</h1>
-    </>
+
+export const DetailModal=({paciente})=>{
+
+    return(
+        <>
+        <h1>Detalle Modal</h1>
+        {paciente.nombre}
+
+        
+        </>
+    )
 }
