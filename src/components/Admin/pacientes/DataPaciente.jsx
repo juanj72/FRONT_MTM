@@ -57,7 +57,7 @@ export const DataPaciente = ()=>{
                   <td>{item.telefono}</td>
                   <td><button className='btn btn-success' ><BScons.BsFillPencilFill/></button>
                   <button className='btn btn-primary'><Aicons.AiFillEye/></button>
-                  <button className='btn btn-danger' ><BScons.BsFillTrashFill/></button>
+                  <button className='btn btn-danger' onClick={eliminarPaciente.bind(null,item.id)} ><BScons.BsFillTrashFill/></button>
                   </td>
                 
                 </tr>
@@ -69,4 +69,13 @@ export const DataPaciente = ()=>{
 
         </>
     )
+}
+
+const eliminarPaciente=async (id)=>{
+  const TOKEN = getToken()
+
+  const response = await fetch(`http://127.0.0.1:8000/api/paciente/${id}/`,{method:'DELETE',headers:{Authorization:`Bearer ${TOKEN}`}});
+        // const jsonData = await response.json();
+        // setData(jsonData);
+
 }
