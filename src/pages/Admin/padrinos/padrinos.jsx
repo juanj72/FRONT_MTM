@@ -4,7 +4,8 @@ import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai'
 import {AddPadrino} from '../../../components/Admin/padrinos'
 import {DetailModal} from '../../../components/Admin/padrinos'
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 export const padrinos =()=>{
@@ -12,6 +13,7 @@ export const padrinos =()=>{
     const [data, setData] = useState([]);
     const [selectedPadrino, setSelectedPadrino] = useState(null);
     const TOKEN = getToken()
+    const MySwal = withReactContent(Swal)
 
     const detallepadrino = (padrino)=>{
       setSelectedPadrino(padrino)
@@ -50,6 +52,18 @@ export const padrinos =()=>{
     const eliminarPadrino= async (id)=>{
       const response = await fetch(`http://127.0.0.1:8000/api/padrino/${id}/`,{method:'DELETE',headers:{Authorization:`Bearer ${TOKEN}`}});
       actualizar();
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
+      
     }
 
 
