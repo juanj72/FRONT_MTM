@@ -3,6 +3,8 @@ import {useAuth} from '../../../hooks'
 import {NavLink,Link} from 'react-router-dom'
 import {Icon,Menu} from 'semantic-ui-react'
 import * as Fccons from 'react-icons/fc';
+import * as Ricons from 'react-icons/ri';
+
 export const TopMenu=()=>{
     const {auth,logout} =useAuth();
     const renderName=()=>{
@@ -25,7 +27,7 @@ export const TopMenu=()=>{
         <Menu.Menu position='right'>
         <Menu.Item>Hola, {renderName()} </Menu.Item>
         <Menu.Item onClick={logout} >
-            <Icon name='sign-out'  ></Icon>
+        <Ricons.RiLogoutBoxRLine className='icon2'/>
         </Menu.Item>
         <Menu.Item  >
             

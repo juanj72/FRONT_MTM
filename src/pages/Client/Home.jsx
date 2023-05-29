@@ -1,5 +1,6 @@
 import './Home.scss'
-
+import * as MDcons from 'react-icons/md';
+import * as Ricons from 'react-icons/ri';
 
 export const Home = () => {
   return (
@@ -33,19 +34,20 @@ export const Home = () => {
         <div class="box-container">
 
           <div class="box">
-            <i class="fab fa-angular"></i>
-            <h3>Lorem</h3>
-            <p>labore molestias consectetur veniam</p>
+          <Ricons.RiPsychotherapyFill className='icon'/>
+            <h3>Salud mental</h3>
+            <p>Fortalecimiento emocional</p>
           </div>
           <div class="box">
-            <i class="fab fa-apple"></i>
-            <h3>Lorem</h3>
-            <p>labore molestias consectetur veniam</p>
+          <MDcons.MdHealthAndSafety className='icon'/>
+            <h3>Salud</h3>
+         
+            <p>Acompañamiento riguroso </p>
           </div>
           <div class="box">
-            <i class="fab fa-android"></i>
-            <h3>Lorem</h3>
-            <p>labore molestias consectetur veniam</p>
+          <MDcons.MdOutlineFamilyRestroom className='icon'/>
+            <h3>Familia</h3>
+            <p>Acompañamiento familiar</p>
           </div>
 
         </div>
