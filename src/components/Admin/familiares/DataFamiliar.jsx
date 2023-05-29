@@ -3,12 +3,15 @@ import {getToken} from '../../../api/token'
 import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai'
 import {AddFamiliar} from './formularios'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 export const DataFamiliar = ()=>{
 
     const [data, setData] = useState([]);
     const TOKEN = getToken()
+    const MySwal = withReactContent(Swal)
 
     useEffect(() => {
     
@@ -23,6 +26,26 @@ export const DataFamiliar = ()=>{
 
     const actualizar=()=>{
       fetchData();
+    }
+
+    const eliminar= async (id)=>{
+      const response = await fetch(`http://127.0.0.1:8000/api/Familiar/${id}/`,{method:'DELETE',headers:{Authorization:`Bearer ${TOKEN}`}});
+      console.log(id)
+      actualizar()
+
+
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
+
     }
 
     return (
@@ -77,7 +100,7 @@ export const DataFamiliar = ()=>{
                  
                   <td><button className='btn btn-success' ><BScons.BsFillPencilFill/></button>
                   <button className='btn btn-primary'><Aicons.AiFillEye/></button>
-                  <button className='btn btn-danger' ><BScons.BsFillTrashFill/></button>
+                  <button className='btn btn-danger' ><BScons.BsFillTrashFill onClick={eliminar.bind(null,item.id)} /></button>
                   </td>
                 
                 </tr>

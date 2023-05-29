@@ -23,21 +23,26 @@ export const AddPadrino = ({props}) => {
         const response = await fetch(`${BASE_API}/api/padrino/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
         const jsonData = await response.json();
 
+        return response
+
       };
       fetchData();
 
-
-      MySwal.fire({
-        title: <p>Hello World</p>,
-        didOpen: () => {
-          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-          Swal.fire(
-            'Padrino agregado con éxito',
-            '',
-            'success'
-          )
-        },
-      })
+   
+        MySwal.fire({
+          title: <p>Hello World</p>,
+          didOpen: () => {
+            // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+            Swal.fire(
+              'Padrino agregado con éxito',
+              '',
+              'success'
+            )
+          },
+        })
+     
+        
+     
 
       props()
 
