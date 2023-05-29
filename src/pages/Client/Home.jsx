@@ -38,7 +38,7 @@ export const Home = () => {
     });
 
     tl.to(".content", {
-      x: () => scrollPosition * 0.5,
+      x: () => scrollPosition * 1.1,
       y: () => scrollPosition * 0.5,
     });
   }, [scrollPosition]);
