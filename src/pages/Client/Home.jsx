@@ -61,7 +61,7 @@ export const Home = () => {
       <section class="content price">
 
         <article class="contain">
-          <h2 class="mision">Mision</h2>
+          <h2 class="mision">Misión</h2>
           <p className='pmis'>Mejorar la calidad de vida de los niños, niñas y adolescentes diagnosticados con cáncer de escasos recursos, brindándoles apoyo psicosocial, hospedaje, medicamentos, alimentación, educación y recreación durante su tratamiento, con el fin de aumentar sus esperanzas de vida minimizando el impacto emocional y económico de la enfermedad en su familia.
           </p>
 
