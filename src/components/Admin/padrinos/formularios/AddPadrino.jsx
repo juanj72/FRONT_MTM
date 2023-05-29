@@ -4,7 +4,7 @@ import { getToken } from '../../../../api/token'
 import { BASE_API } from '../../../../utils/constants'
 
 
-export const AddPadrino = (props) => {
+export const AddPadrino = ({props}) => {
 
   const TOKEN = getToken()
   const formik = useFormik({
@@ -25,7 +25,7 @@ export const AddPadrino = (props) => {
 
 
 
-      props.pepe()
+      props()
 
     }
 

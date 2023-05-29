@@ -41,6 +41,11 @@ export const padrinos =()=>{
     
     }
 
+    const eliminarPadrino= async (id)=>{
+      const response = await fetch(`http://127.0.0.1:8000/api/padrino/${id}/`,{method:'DELETE',headers:{Authorization:`Bearer ${TOKEN}`}});
+      actualizar();
+    }
+
 
         console.log(data);
      
@@ -62,7 +67,7 @@ export const padrinos =()=>{
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
-      <AddPadrino pepe={actualizar} />
+      <AddPadrino props={actualizar} />
 
 
       </div>
@@ -109,7 +114,7 @@ export const padrinos =()=>{
                   <td>{item.campo}</td>
                    <td><button className='btn btn-success' ><BScons.BsFillPencilFill/></button>
                   <button className='btn btn-primary'><Aicons.AiFillEye/></button>
-                  <button className='btn btn-danger' ><BScons.BsFillTrashFill/></button>
+                  <button className='btn btn-danger' onClick={eliminarPadrino.bind(null,item.id)} ><BScons.BsFillTrashFill/></button>
                   </td>
                 </tr>
               ))}
