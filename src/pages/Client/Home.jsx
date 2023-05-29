@@ -8,6 +8,7 @@ import Hero from "../../components/Client/Hero/Hero";
 import Mision from "../../components/Client/Mision/Mision";
 import About from "../../components/Client/About/About";
 import "./Home.scss";
+import Galeria from "../../components/Client/Galeria/Galeria";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +57,7 @@ export const Home = () => {
           <Flor scale={34} position={[-6, 0, 0]} className="model" />
         </Canvas>
       </div>
+      <Galeria />
     </>
   );
 };

@@ -1,0 +1,143 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .gallery-image {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 360vh;
+  }
+
+  .ver1 {
+    font-size: 12px;
+    font-family: sans-serif;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    border-radius: 20px;
+    flex: 0 0 auto;
+    height: 420px;
+    left: 261px;
+    overflow: hidden;
+    position: absolute;
+    top: 29px;
+    width: 255px;
+    will-change: transform;
+  }  
+
+  .ver2{    
+    font-size: 12px;
+    font-family: sans-serif;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    border-radius: 20px;
+    flex: 0 0 auto;
+    height: 419px;
+    left: 634px;
+    overflow: hidden;
+    position: absolute;
+    top: 341px;
+    width: 256px;
+    will-change: transform;
+  }
+
+  .ver3 {
+    font-size: 12px;
+    font-family: sans-serif;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    border-radius: 20px;
+    flex: 0 0 auto;
+    height: 431px;
+    left: 1147px;
+    overflow: hidden;
+    position: absolute;
+    top: 51px;
+    width: 262px;
+    will-change: transform;
+  }
+
+  .ver4 {
+    font-size: 12px;
+    font-family: sans-serif;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    border-radius: 20px;
+    flex: 0 0 auto;
+    height: 308px;
+    left: 55px;
+    overflow: hidden;
+    position: absolute;
+    top: 515px;
+    width: 451px;
+    will-change: transform;
+  }
+
+  .ver5 {
+    font-size: 12px;
+    font-family: sans-serif;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    border-radius: 20px;
+    flex: 0 0 auto;
+    height: 484px;
+    left: 1513px;
+    overflow: hidden;
+    position: absolute;
+    top: 267px;
+    width: 339px;
+    will-change: transform;
+  }
+
+.guerreros {
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    flex: 0 0 auto;
+    height: auto;
+    left: 350px;
+    position: absolute;
+    top: 340vh;
+    white-space: pre;
+    width: auto;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    transform: none;
+}
+
+.guerrerostext {
+    --framer-aspect-ratio-supported: auto;
+    --framer-link-text-color: #0099ff;
+    --framer-link-text-decoration: underline;
+    --framer-paragraph-spacing: 0px;
+    white-space: pre;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    margin: 0px;
+    padding: 0px;
+    color: var(--framer-text-color, #000);
+    letter-spacing: var(--framer-letter-spacing, 0);
+    text-transform: var(--framer-text-transform, none);
+    text-decoration: var(--framer-text-decoration, none);
+    line-height: var(--framer-line-height, 1.2em);
+    text-align: var(--framer-text-alignment, start);
+    --font-selector: Q1VTVE9NO0h1bWFuZSBNZWRpdW0=;
+    --framer-font-family: "Humane BOLD", sans-serif;
+    --framer-font-size: 78px;
+}

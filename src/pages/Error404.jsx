@@ -9,8 +9,7 @@ export const Error404 = () => {
       <div className='cent2'>
         <h2 className='sub'>La página a la que intenta acceder no existe o ha sido movida.</h2>
       </div>
-    </div>
-    
+    </div>    
     </>
   )
 }

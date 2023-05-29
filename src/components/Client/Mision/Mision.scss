@@ -15,7 +15,7 @@
     height: 515px;
     left: 97px;
     position: absolute;
-    top: 2600px;
+    top: 2700px;
     white-space: pre-wrap;
     width: 700px;
     word-break: break-word;
@@ -105,7 +105,7 @@
     height: 515px;
     left: 1161px;
     position: absolute;
-    top: 2616px;
+    top: 2716px;
     white-space: pre-wrap;
     width: 700px;
     word-break: break-word;
@@ -175,3 +175,21 @@
     --framer-line-height: 1em;
     --framer-text-alignment: justify;
 }
+
+
+  .logg {
+    font-size: 12px;
+    font-family: sans-serif;
+    --framer-aspect-ratio-supported: auto;
+    box-sizing: border-box;
+    -webkit-font-smoothing: inherit;
+    aspect-ratio: 1 / 1;
+    background-color: #9ef;
+    flex: none;
+    height: var(--framer-aspect-ratio-supported, 382px);
+    left: calc(48.02083333333335% - 382px / 2);
+    overflow: hidden;
+    position: absolute;
+    top: 210vh;
+    width: 382px;
+  }
