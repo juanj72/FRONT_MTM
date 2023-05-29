@@ -17,42 +17,44 @@
 .gallery-image {
   margin: 10px;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .ver1 {
   width: 255px;
   height: 420px;
-  left: 261px;
-  top: 29px;
+  left: 100px;
+  top: 100px;
 }
 
 .ver2 {
   width: 256px;
   height: 419px;
-  left: 634px;
-  top: 341px;
+  left: 500px;
+  top: 200px;
 }
 
 .ver3 {
   width: 262px;
   height: 431px;
-  left: 1147px;
-  top: 51px;
+  left: 900px;
+  top: 300px;
 }
 
 .ver4 {
   width: 451px;
   height: 308px;
-  left: 55px;
-  top: 515px;
+  left: 300px;
+  top: 400px;
 }
 
 .ver5 {
   width: 339px;
   height: 484px;
-  left: 1513px;
-  top: 267px;
+  left: 700px;
+  top: 500px;
 }
+
 
 .guerreros {
   display: flex;
@@ -60,10 +62,12 @@
 }
 
 .guerrerostext {
-  font-size: 78px;
+  font-size: 210px;
   font-family: 'Humane', sans-serif;
+  font-weight: 900;
   margin: 0;
   padding: 0;
   color: #000;
   text-align: center;
+  letter-spacing: 0.1rem;
 }

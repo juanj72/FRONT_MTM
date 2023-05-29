@@ -21,6 +21,9 @@ const Galeria = () => {
 
   return (
     <div className="container">
+      <div className="guerreros">
+        <p className="guerrerostext">Guerreros valientes y fuertes</p>
+      </div>
       <div className="gallery" ref={galleryRef}>
         <img className="gallery-image ver1" src="../src/img/image1.jpg" alt="Image 1" />
         <img className="gallery-image ver2" src="../src/img/image2.jpg" alt="Image 2" />
@@ -28,9 +31,7 @@ const Galeria = () => {
         <img className="gallery-image ver4" src="../src/img/image4.jpg" alt="Image 4" />
         <img className="gallery-image ver5" src="../src/img/image5.jpg" alt="Image 5" />
       </div>
-      <div className="guerreros">
-        <p className="guerrerostext">Guerreros valientes y fuertes</p>
-      </div>
+      
     </div>
   );
 };

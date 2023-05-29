@@ -1,0 +1,58 @@
+.home-container {
+    width: 1920px;
+    height: 761px;
+    position: relative;
+    background: rgba(214, 214, 214, 0.27);
+  
+    .home-title {
+      width: 361.98px;
+      height: 39px;
+      position: absolute;
+      left: 779.11px;
+      top: 19px;
+      font-size: 29px;
+      text-align: center;
+      color: #0c71c3;
+    }
+  
+    .content-container {
+      width: 1440px;
+      height: 158.19px;
+      position: absolute;
+      left: 240px;
+      top: 134px;
+      display: flex;
+      justify-content: space-between;
+  
+      .info-card {
+        width: 327.59px;
+        height: 123.19px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+  
+        .info-title {
+          width: 119.89px;
+          height: 24px;
+          margin: 0 auto;
+          font-size: 18px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #0c71c3;
+        }
+  
+        .info-details {
+          margin-top: 10px;
+  
+          p {
+            width: 327.79px;
+            font-size: 14px;
+            text-align: left;
+            color: #666;
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+  
