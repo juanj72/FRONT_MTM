@@ -1,0 +1,27 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  top: -290vh;
+  left: -15vw;
+  transition: transform 0.5s ease;
+}
+
+.model {
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 0.5s ease;
+}
