@@ -1,27 +1,25 @@
-#root {
-  width: 100vw;
-  height: 100vh;
-}
 
-body,
-html {
-  margin: 0;
-  padding: 0;
-}
-
-.content {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  top: -290vh;
-  left: -15vw;
-  transition: transform 0.5s ease;
-}
-
-.model {
-  transform-style: preserve-3d;
-  transform: rotateY(0deg);
-  transition: transform 0.5s ease;
-}
+header {
+    /* Personalizar la barra de desplazamiento */
+    scrollbar-width: thin;
+    scrollbar-color: #999999 #e5e5e5;
+  }
+  
+  /* Estilos de la barra de desplazamiento */
+  ::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #e5e5e5; /* Color de fondo de la pista de la barra de desplazamiento */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #999999; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 4px; /* Radio de borde del pulgar de la barra de desplazamiento */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555555; /* Color del pulgar de la barra de desplazamiento al pasar el mouse */
+  }
+  

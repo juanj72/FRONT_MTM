@@ -1,19 +1,21 @@
 import React from 'react';
 import './Navbar.scss';
 
-const Header = () => {
+const Navbar = () => {
   return (
-    <div className='header'>
-        <div className='navbar'>
-            <a href='/' className='btn' id='nav1'>Inicio</a>
-            <a href='/pacientes' className='btn'id='nav2'>Pacientes</a>
-            <a href='/padrinos' className='btn'id='nav3'>Padrinos</a>
+    <header>
+      <nav className='navbar'>
+        <div className='navbar-left'>
+          <a href='/' className='nav-link' id='nav1'>Inicio</a>
+          <a href='/pacientes' className='nav-link' id='nav2'>Pacientes</a>
+          <a href='/padrinos' className='nav-link' id='nav3'>Padrinos</a>
         </div>
-        <button className='btn2'>
-            <a href='/admin' className='btntext'>Ingresar</a>
-        </button>
-    </div>
+      </nav>
+      <button className='login-button'>
+        <a href='/admin' className='login-link'>Ingresar</a>
+      </button>
+    </header>
   );
 }
 
-export default Header;
+export default Navbar;
