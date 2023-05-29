@@ -9,7 +9,7 @@ export const Home = () => {
 
       <header class="content header">
         <h2 class="title"><b className='m'>Mujeres</b> <b className='t'>Trabajando</b> por el <b className='me'>meta</b></h2>
-       
+
 
         <div class="btn-home">
           <a href="#" class="btnh">Saber mas</a>
@@ -17,12 +17,12 @@ export const Home = () => {
         </div>
       </header>
 
-      <section class="content sau">
+      <section class="content sau" id='servicios'>
 
         <h2 class="title">Servicios</h2>
         <p className='pinit'>Actualmente tenemos capacidad para 30 personas con posibilidad de ampliación,  durante el tiempo que se requiera según autorización médica.
 
-La única restricción para el ingreso del paciente es que su diagnóstico sea relacionado con al grupo viral, debido a que nuestra gran población son pacientes con cáncer.</p>
+          La única restricción para el ingreso del paciente es que su diagnóstico sea relacionado con al grupo viral, debido a que nuestra gran población son pacientes con cáncer.</p>
 
         <div class="box-container">
 
@@ -48,7 +48,7 @@ La única restricción para el ingreso del paciente es que su diagnóstico sea r
       </section>
       <hr />
 
-      <section class="content about">
+      <section class="content about" id='nosotros'>
 
         <h2 class="title">Nosotros</h2>
         <p className='pinit'>La Fundación sin ánimo de lucro apoya a niños, niñas y adolescentes con cáncer y sus familias. Más allá de la cura, se enfoca en su aceptación y empoderamiento. Los programas integrales van más allá de la asistencia inicial, promoviendo cambios. Trabajan con el estado y las instituciones de salud para garantizar los mejores tratamientos y atención. Colaboran con servicios de enfermería, fonoaudiología, psicología y nutrición, entre otros, para brindar un apoyo completo.
@@ -71,12 +71,22 @@ La única restricción para el ingreso del paciente es que su diagnóstico sea r
 
       </section>
 
-      <section class="content contact">
+      <section class="content contact" id='contacto'>
         <h2 class="title">Contacto</h2>
-        <p >48481548</p>
-        <figure class="map">
-          <img src="" />
-        </figure>
+        <div className='formulario' >
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+        </div>
+
+        
+
       </section>
 
 
