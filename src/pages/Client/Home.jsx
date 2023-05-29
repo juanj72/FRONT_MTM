@@ -1,9 +1,98 @@
+import './Home.scss'
 
 
 export const Home = () => {
   return (
     <>
-        <h1>Home Client</h1>
+
+
+      <header class="content header">
+        <h2 class="title">Inicio</h2>
+        <p className='pinit'>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Ipsam necessitatibus odio quisquam reprehenderit quas,
+          obcaecati, harum hic molestiae sequi ipsa nihil id tempore explicabo
+          libero vero quia asperiores similique dicta.
+        </p>
+
+        <div class="btn-home">
+          <a href="#" class="btnh">Saber mas</a>
+          <a href="#" class="btnh">Saber mas</a>
+        </div>
+      </header>
+
+      <section class="content sau">
+
+        <h2 class="title">Productos</h2>
+        <p className='pinit'>Lorem ipsum, dolor sit amet consectetur adipisicing
+          elit. Veritatis excepturi dolore, harum asperiores
+          cupiditate officiis quia odit reiciendis quidem iure
+          architecto laudantium
+          nihil saepe pariatur vel labore molestias consectetur veniam?</p>
+
+        <div class="box-container">
+
+          <div class="box">
+            <i class="fab fa-angular"></i>
+            <h3>Lorem</h3>
+            <p>labore molestias consectetur veniam</p>
+          </div>
+          <div class="box">
+            <i class="fab fa-apple"></i>
+            <h3>Lorem</h3>
+            <p>labore molestias consectetur veniam</p>
+          </div>
+          <div class="box">
+            <i class="fab fa-android"></i>
+            <h3>Lorem</h3>
+            <p>labore molestias consectetur veniam</p>
+          </div>
+
+        </div>
+
+      </section>
+      <hr />
+
+      <section class="content about">
+
+        <h2 class="title">Nosotros</h2>
+        <p className='pinit'>Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ut soluta similique
+          quia reprehenderit eligendi aliquam. Sit
+          odio impedit quibusdam. Velit corporis,
+          optio debitis quidem ex ipsam rerum dolorem autem sequi.
+        </p>
+
+        <a href="#" class="btnh">Saber mas</a>
+
+      </section>
+
+      <section class="content price">
+
+        <article class="contain">
+          <h2 class="title">Precio</h2>
+          <p>Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Ut soluta similique
+            quia reprehenderit eligendi aliquam. Sit
+            odio impedit quibusdam. Velit corporis,
+            optio debitis quidem ex ipsam rerum dolorem autem sequi.
+          </p>
+
+          <a href="#" class="btnh">Saber precio</a>
+
+        </article>
+
+      </section>
+
+      <section class="content contact">
+        <h2 class="title">Contacto</h2>
+        <p>48481548</p>
+        <figure class="map">
+          <img src="" />
+        </figure>
+      </section>
+
+
     </>
   )
 }

@@ -1,10 +1,11 @@
 import './ClientLayout.scss';
+import {TopMenu} from '../../components/Client/MenuBar'
 
 export const ClientLayout = (props) => {
     const {children} = props;
   return (
     <>
-        <h1>ClientLayout</h1>
+      <TopMenu/>
         {children}
     </>
     

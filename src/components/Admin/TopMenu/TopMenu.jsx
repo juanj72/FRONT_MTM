@@ -1,7 +1,8 @@
 import './TopMenu.scss';
 import {useAuth} from '../../../hooks'
-
+import {NavLink,Link} from 'react-router-dom'
 import {Icon,Menu} from 'semantic-ui-react'
+import * as Fccons from 'react-icons/fc';
 export const TopMenu=()=>{
     const {auth,logout} =useAuth();
     const renderName=()=>{
@@ -25,6 +26,10 @@ export const TopMenu=()=>{
         <Menu.Item>Hola, {renderName()} </Menu.Item>
         <Menu.Item onClick={logout} >
             <Icon name='sign-out'  ></Icon>
+        </Menu.Item>
+        <Menu.Item  >
+            
+            <Link to='/'> <Fccons.FcHome/></Link>
         </Menu.Item>
         </Menu.Menu>
         
