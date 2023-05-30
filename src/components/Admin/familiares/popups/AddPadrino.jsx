@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import {getToken} from '../../../../api/token'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { BASE_API } from '../../../../utils/constants'
+
+import withReactContent from 'sweetalert2-react-content';
+import Swal from 'sweetalert2';
 
 
 
@@ -10,6 +14,7 @@ export const AddPadrino = ({ paciente }) => {
 
     const [data, setData] = useState([]);
     const TOKEN = getToken()
+    const MySwal = withReactContent(Swal)
 
 
     const formik = useFormik({
@@ -19,14 +24,30 @@ export const AddPadrino = ({ paciente }) => {
           console.log("Datos enviados");
     
     
-        //   const fetchData = async () => {
-        //     const response = await fetch(`${BASE_API}/api/Familiar/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
-        //     const jsonData = await response.json();
-        //     console.log(jsonData);
-        //   };
-       console.log(formValue)
+          const fetchData2 = async () => {
+            const response = await fetch(`${BASE_API}/api/paciente_padrino/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify({"paciente":paciente.id,"padrino":formValue.padrino}) });
+            const jsonData = await response.json();
+            console.log(response.status);
+            if (response.status ==201){
+                MySwal.fire({
+                    title: <p>Hello World</p>,
+                    didOpen: () => {
+                      // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+                      Swal.fire(
+                        `se ha agregago el parino numero ${formValue.padrino} al paciente numero ${paciente.id}`,
+                        '',
+                        'success'
+                      )
+                    },
+                  })
+            }else{
+                alert('papi revise el error')
+            }
+          };
+    //   
+          fetchData2();
         
-         
+    console.log(formValue.padrino,paciente.id)
         }
     
       });
