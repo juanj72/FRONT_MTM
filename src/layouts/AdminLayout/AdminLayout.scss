@@ -1,20 +1,24 @@
-.admin-layout{
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-left: 250px;
+    background-image: url('../../img/bg2.png');
+  }
+  
+  .admin-layout__menu {
+    margin-bottom: 20px;
+  }
+  
+  .admin-layout__main-content {
     width: 100%;
-    display: grid;
-    grid: 55px / 1fr;
-    grid-template-areas: 
-    "menu"
-    "content"
-    ;
-
-    &__menu{
-        grid-area: menu;
-        margin-bottom: 200px;
-
-    }
-    &__main-content{
-        grid-area: content;
-        margin-left: 270px;
-    }
-
-}
+    max-width: 1200px;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 80px 50px;
+  }
+  
