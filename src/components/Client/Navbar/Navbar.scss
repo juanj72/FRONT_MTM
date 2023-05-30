@@ -1,0 +1,45 @@
+.headna {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e5e5e5;
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 30px;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: "Aboreto", sans-serif;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.login-button {
+  padding: 8px 25px;
+  background-color: #fff;
+  border-radius: 30px;
+  border: none; /* Quita el borde del botón */
+  z-index: 100;
+}
+
+.login-link {
+  font-size: 14px;
+  color: #000;
+  text-decoration: none;
+}

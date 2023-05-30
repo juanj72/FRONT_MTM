@@ -1,0 +1,63 @@
+.home-container {
+    width: 1920px;
+    height: 40vh;
+    position: relative;
+    background: rgba(214, 214, 214, 0.27);
+  
+    .home-title {
+      height: 39px;
+      position: absolute;
+      left: 779.11px;
+      top: 25px;
+      font-size: 69px;
+      text-align: center;
+      color: #ab77c5;
+      letter-spacing: 0.5rem;
+      font-family: "Humane", sans-serif;
+    }
+  
+    .content-container {
+      width: 1440px;
+      height: 158.19px;
+      position: absolute;
+      left: 240px;
+      top: 160px;
+      display: flex;
+      justify-content: space-between;
+  
+      .info-card {
+        width: 327.59px;
+        height: 123.19px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+  
+        .info-title {
+          width: 119.89px;
+          height: 24px;
+          margin: 0 auto;
+          font-size: 32px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #ab77c5;
+          font-family: "Humane", sans-serif;
+          letter-spacing: 0.3rem;
+        }
+  
+        .info-details {
+          margin-top: 32px;
+  
+          p {
+            width: 327.79px;
+            font-size: 14px;
+            text-align: left;
+            color: #666;
+            margin-bottom: 5px;
+            font-family: 'Arial Nova', sans-serif;
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+  

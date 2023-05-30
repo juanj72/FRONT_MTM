@@ -1,0 +1,80 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  height: 140vh;
+  width: 100%;
+}
+
+.fondo {
+  background-image: url('../../../img/bg2.png');
+  background-size: cover;
+  background-position: left;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.gallery-image {
+  margin: 10px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.ver1 {
+  width: 255px;
+  height: 420px;
+  left: 100px;
+  top: 100px;
+}
+
+.ver2 {
+  width: 256px;
+  height: 419px;
+  left: 500px;
+  top: 200px;
+}
+
+.ver3 {
+  width: 262px;
+  height: 431px;
+  left: 900px;
+  top: 300px;
+}
+
+.ver4 {
+  width: 451px;
+  height: 308px;
+  left: 300px;
+  top: 400px;
+}
+
+.ver5 {
+  width: 339px;
+  height: 484px;
+  left: 700px;
+  top: 500px;
+}
+
+
+.guerreros {
+  display: flex;
+  justify-content: center;
+}
+
+.guerrerostext {
+  font-size: 210px;
+  font-family: 'Humane', sans-serif;
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  color: #ab77c5;
+  text-align: center;
+  letter-spacing: 0.1rem;
+}

@@ -1,0 +1,42 @@
+.contmi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 110vh;
+    background-image: url("../../../img/bg.png");
+    background-position: center;
+  }
+  
+  .column {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    max-width: 700px;
+  }
+  
+  .ti1, .ti2 {
+    font-family: "Humane", sans-serif;
+    letter-spacing: 1.5rem;
+    font-size: 64px;
+    color: #ab77c5;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  .iztext, .detext {
+    font-family: "Aboreto", sans-serif;
+    font-size: 18px;
+    color: #000;
+    margin: 0;
+    text-align: justify;
+  }
+
+  .iztext {
+    margin-right: 80px;
+  }
+
+  .detext {
+    margin-left: 80px;
+  }
+  
