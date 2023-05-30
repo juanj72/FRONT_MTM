@@ -1,11 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import {getToken} from '../../../../api/token'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+
 
 export const AddPadrino = ({ paciente }) => {
     console.log(paciente)
 
     const [data, setData] = useState([]);
     const TOKEN = getToken()
+
+
+    const formik = useFormik({
+        initialValues: initialValues(),
+        // validationSchema: Yup.object(validationSchema()),
+        onSubmit: (formValue) => {
+          console.log("Datos enviados");
+    
+    
+        //   const fetchData = async () => {
+        //     const response = await fetch(`${BASE_API}/api/Familiar/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
+        //     const jsonData = await response.json();
+        //     console.log(jsonData);
+        //   };
+       console.log(formValue)
+        
+         
+        }
+    
+      });
+
+
+
+
 
 
 
@@ -32,9 +60,9 @@ export const AddPadrino = ({ paciente }) => {
     
 
 
-            <form action="">
+            <form action="" onSubmit={formik.handleSubmit}>
             <label htmlFor="">seleccion el padrino</label>
-            <select className="form-select" aria-label="Default select example" name="padrino" >  
+            <select className="form-select" aria-label="Default select example" name="padrino" value={formik.values.padrino} onChange={formik.handleChange} error={formik.errors.padrino}>  
             {data.map(item => (
                 
                     
@@ -49,7 +77,7 @@ export const AddPadrino = ({ paciente }) => {
           </select>
             
 
-            <button className="btn btn-primary" >asignar</button>
+            <button className="btn btn-primary" type='submit' >asignar</button>
 
             </form>
            
@@ -58,3 +86,12 @@ export const AddPadrino = ({ paciente }) => {
     )
 
 }
+
+
+const initialValues = () => {
+    return {
+      padrino: "",
+     
+    };
+  }
+  
