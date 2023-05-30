@@ -23,23 +23,39 @@ export const AddPadrino = ({ actualizar }) => {
         const response = await fetch(`${BASE_API}/api/padrino/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
         const jsonData = await response.json();
 
-        return response
+        if (response.status == 201){
+          MySwal.fire({
+            title: <p>Hello World</p>,
+            didOpen: () => {
+              // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+              Swal.fire(
+                'Padrino agregado con éxito',
+                '',
+                'success'
+              )
+            },
+          })
+
+        }else{
+          MySwal.fire({
+            title: <p>Hello World</p>,
+            didOpen: () => {
+              // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'algo ha fallado',
+                
+              })
+            },
+          })
+        }
 
       };
       fetchData();
 
 
-      MySwal.fire({
-        title: <p>Hello World</p>,
-        didOpen: () => {
-          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-          Swal.fire(
-            'Padrino agregado con éxito',
-            '',
-            'success'
-          )
-        },
-      })
+    
 
 
 

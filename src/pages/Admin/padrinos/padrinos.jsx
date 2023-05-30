@@ -40,18 +40,37 @@ export const padrinos = () => {
 
   const eliminarPadrino = async (id) => {
     const response = await fetch(`http://127.0.0.1:8000/api/padrino/${id}/`, { method: 'DELETE', headers: { Authorization: `Bearer ${TOKEN}` } });
+    console.log(response)
+    if(response.status==204){
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
+
+    }else{
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'este padrino ya tiene ahijados',
+            
+          })
+        },
+      })
+    }
+
     actualizar();
-    MySwal.fire({
-      title: <p>Hello World</p>,
-      didOpen: () => {
-        // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-        Swal.fire(
-          'Tarea realizada con éxito',
-          '',
-          'success'
-        )
-      },
-    })
+    
 
   }
 

@@ -22,24 +22,38 @@ export const AddPaciente = ({ actualizar }) => {
       const fetchData = async () => {
         const response = await fetch(`${BASE_API}/api/paciente/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
         const jsonData = await response.json();
-        console.log(jsonData)
+        if (response.status ==201){
+          MySwal.fire({
+              title: <p>Hello World</p>,
+              didOpen: () => {
+                // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+                Swal.fire(
+                  `se ha agregago el paciente ${formValue.nombre}`,
+                  '',
+                  'success'
+                )
+              },
+            })
+      }else{
+        MySwal.fire({
+          title: <p>Hello World</p>,
+          didOpen: () => {
+            // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'algo ha fallado',
+              
+            })
+          },
+        })
+      }
       };
       fetchData();
 
 
       actualizar()
-      MySwal.fire({
-        title: <p>Hello World</p>,
-        didOpen: () => {
-          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-          Swal.fire(
-            'Tarea realizada con éxito',
-            '',
-            'success'
-          )
-        },
-      })
-
+ 
 
 
 

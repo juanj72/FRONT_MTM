@@ -43,17 +43,33 @@ export const DataPaciente = ({ props }) => {
     const jsonData = await response2.json();
     setData(jsonData);
 
-    MySwal.fire({
-      title: <p>Hello World</p>,
-      didOpen: () => {
-        // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-        Swal.fire(
-          'Tarea realizada con éxito',
-          '',
-          'success'
-        )
-      },
-    })
+    if(response.status==204){
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
+
+    }else{
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'este paciente ya tiene padrinos',
+            
+          })
+        },
+      })
+    }
 
   }
 
@@ -177,11 +193,11 @@ export const DataPaciente = ({ props }) => {
                 <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#DetalleModal" onClick={DetallePaciente.bind(null, item)} ><Aicons.AiFillEye /></button>
                 <button className='btn btn-danger' onClick={eliminarPaciente.bind(null, item.id)} ><BScons.BsFillTrashFill /></button>
               </td>
-              <td> <button className='btn btn-info' altt="comunidad" ><MDcons.MdOutlineFamilyRestroom /></button>
+              <td> <button className='btn btn-info' altt="comunidad" ><Aicons.AiFillEye /></button>
                 <button className='btn btn-warning' alt="comunidad" ><MDcons.MdPersonAddAlt1 /></button>
               </td>
               <td>
-              <button className='btn btn-info' altt="comunidad" ><MDcons.MdOutlineFamilyRestroom /></button>
+              <button className='btn btn-info' altt="comunidad" ><Aicons.AiFillEye /></button>
                 <button className='btn btn-warning' alt="comunidad"  data-bs-toggle="modal" data-bs-target="#AddPadrino" onClick={DetallePaciente.bind(null, item)} ><MDcons.MdPersonAddAlt1 /></button>
 
               </td>
