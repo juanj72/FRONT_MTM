@@ -2,74 +2,52 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { getToken } from '../../../../api/token'
 import { BASE_API } from '../../../../utils/constants'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from 'sweetalert2-react-content';
+import Swal from 'sweetalert2';
 
-export const AddPadrino = ({ actualizar }) => {
+const edit = null
+export const ModalEdit = ({ selectedPadrino, actualizar }) => {
+  let data = {}
+
+  if (selectedPadrino != null) {
+    // console.log(paciente)
+    data = selectedPadrino
+    console.log(data)
+  }
 
   const TOKEN = getToken()
-  const MySwal = withReactContent(Swal)
-
+  const MySwal = withReactContent(Swal);
 
   const formik = useFormik({
-    initialValues: initialValues(),
+    initialValues: initialValues(data.nombre),
     // validationSchema: Yup.object(validationSchema()),
     onSubmit: (formValue) => {
       console.log("Datos enviados");
-
-
-
       const fetchData = async () => {
-        const response = await fetch(`${BASE_API}/api/padrino/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
+        const response = await fetch(`${BASE_API}/api/padrino/${data.id}/`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
         const jsonData = await response.json();
-
-        if (response.status == 201){
-          MySwal.fire({
-            title: <p>Hello World</p>,
-            didOpen: () => {
-              // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-              Swal.fire(
-                'Padrino agregado con éxito',
-                '',
-                'success'
-              )
-            },
-          })
-
-        }else{
-          MySwal.fire({
-            title: <p>Hello World</p>,
-            didOpen: () => {
-              // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'algo ha fallado',
-                
-              })
-            },
-          })
-        }
-
+        console.log(jsonData)
       };
       fetchData();
-
-
-    
-
-
-
-
       actualizar()
 
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
     }
-
   });
-
-
 
   return (
     <>
+      <h1>Modal edición</h1>
 
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-3">
@@ -128,16 +106,17 @@ export const AddPadrino = ({ actualizar }) => {
 
 
         <div className="modal-footer">
-          <button type='submit' className="btn btn-primary">Agregar</button>
+          <button type='submit' className="btn btn-primary">Actualizar</button>
         </div>
       </form>
+
     </>
   )
 }
 
-const initialValues = () => {
+const initialValues = (nombre) => {
   return {
-    nombre: "",
+    nombre: nombre,
     apellido: "",
     tipo_persona: "",
     estrato: "",
@@ -147,7 +126,6 @@ const initialValues = () => {
     correo: "",
     tiempo_apadrinando: "",
     campo: "",
-
   };
 }
 

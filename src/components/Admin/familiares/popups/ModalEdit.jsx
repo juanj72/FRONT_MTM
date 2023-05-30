@@ -6,26 +6,32 @@ import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 
 
+export const ModalEdit = ({ selectedFamiliar, actualizar }) => {
+  let data = {}
 
-export const AddFamiliar = ({ actualizar }) => {
+  if (selectedFamiliar != null) {
+    // console.log(paciente)
+    data = selectedFamiliar
+    console.log(data)
+  }
 
   const TOKEN = getToken()
-  const MySwal = withReactContent(Swal)
+  const MySwal = withReactContent(Swal);
 
   const formik = useFormik({
-    initialValues: initialValues(),
+    initialValues: initialValues(data.nui),
+    
     // validationSchema: Yup.object(validationSchema()),
     onSubmit: (formValue) => {
       console.log("Datos enviados");
-
-
       const fetchData = async () => {
-        const response = await fetch(`${BASE_API}/api/Familiar/`, { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
+        const response = await fetch(`${BASE_API}/api/Familiar/${data.id}/`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
         const jsonData = await response.json();
-        console.log(jsonData);
+        // console.log(jsonData)
       };
       fetchData();
       actualizar()
+
       MySwal.fire({
         title: <p>Hello World</p>,
         didOpen: () => {
@@ -38,18 +44,12 @@ export const AddFamiliar = ({ actualizar }) => {
         },
       })
     }
-
   });
-
-
-
-
-
-
-
 
   return (
     <>
+      <h1>Modal edición</h1>
+
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Nui</label>
@@ -91,13 +91,15 @@ export const AddFamiliar = ({ actualizar }) => {
           <button type='submit' className="btn btn-primary">Agregar</button>
         </div>
       </form>
+
     </>
   )
 }
 
-const initialValues = () => {
+const initialValues = (nui) => {
+  console.log(nui)
   return {
-    nui: "",
+    nui: nui,
     antecedentes_oncologicos: "",
     ocupacion: "",
     nombre: "",

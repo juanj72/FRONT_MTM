@@ -1,58 +1,73 @@
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import {getToken} from '../../../../api/token'
-import {BASE_API} from '../../../../utils/constants'
+import { getToken } from '../../../../api/token'
+import { BASE_API } from '../../../../utils/constants'
+import withReactContent from 'sweetalert2-react-content';
+import Swal from 'sweetalert2';
 
 const edit = null
-export const ModalEdit=({props,actualizar})=>{
-    let data = {}
- 
-   
+export const ModalEdit = ({ selectedPaciente, actualizar }) => {
+  let data = {}
 
-    if (props != null) {
-        // console.log(paciente)
-        data = props
-        console.log(data)
+  if (selectedPaciente != null) {
+    // console.log(paciente)
+    data = selectedPaciente
+    console.log(data)
+  }
+
+
+  const initialValues = (nombre) => {
+    return {
+      nombre: nombre,
+      apellido: "",
+      nui: "",
+      fecha_inicio_tratamiento: "",
+      fecha_ingreso: "",
+      seguro_funebre: "",
+      telefono: "",
+      correo: "",
+      direccion_residencia: "",
+    };
+  }
+
+
+
+
+  const TOKEN = getToken()
+  const MySwal = withReactContent(Swal);
+
+  const formik = useFormik({
+    initialValues: initialValues(data.nombre),
+    // validationSchema: Yup.object(validationSchema()),
+    onSubmit: (formValue) => {
+      console.log("Datos enviados");
+      const fetchData = async () => {
+        const response = await fetch(`${BASE_API}/api/paciente/${data.id}/`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
+        const jsonData = await response.json();
+        console.log(jsonData)
+      };
+      fetchData();
+      actualizar()
+
+      MySwal.fire({
+        title: <p>Hello World</p>,
+        didOpen: () => {
+          // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+          Swal.fire(
+            'Tarea realizada con éxito',
+            '',
+            'success'
+          )
+        },
+      })
     }
+  });
 
+  return (
+    <>
+      <h1>Modal edición</h1>
 
-
-    const TOKEN = getToken()
-    const formik = useFormik({
-        initialValues: initialValues(data.nombre),
-        // validationSchema: Yup.object(validationSchema()),
-        onSubmit:  (formValue) => {
-            console.log("Datos enviados");
-           
-
-           
-                const fetchData = async () => {
-                  const response = await fetch(`${BASE_API}/api/paciente/${data.id}/`,{method:'PATCH',headers:{'Content-Type': 'application/json',Authorization:`Bearer ${TOKEN}`},body:JSON.stringify(formValue)});
-                //   const jsonData = await response.json();
-                //   console.log(jsonData)
-                };
-                fetchData();
-
-
-            actualizar()
-            
-
-            
-             
-          
-              
-        }
-
-    }); 
-
-
-
-
-    return (
-        <>
-        <h1>Modal edición</h1>
-
-        <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={formik.handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Nombre</label>
           <input type="text" className="form-control" aria-describedby="emailHelp" value={formik.values.nombre}
@@ -61,14 +76,14 @@ export const ModalEdit=({props,actualizar})=>{
         </div>
         <div className="mb-3">
           <label className="form-label">Apellido</label>
-          <input type="text" className="form-control" 
+          <input type="text" className="form-control"
             onChange={formik.handleChange} name='apellido' error={formik.errors.apellido} placeholder={data.apellido} />
         </div>
 
         <div className="mb-3">
           <label className="form-label">Nui</label>
           <input type="number" className="form-control" value={formik.values.nui}
-            onChange={formik.handleChange} name='nui' error={formik.errors.nui}  placeholder={data.nui} />
+            onChange={formik.handleChange} name='nui' error={formik.errors.nui} placeholder={data.nui} />
         </div>
         <div className="mb-3">
           <label className="form-label">fecha_inicio_tratamiento</label>
@@ -105,26 +120,41 @@ export const ModalEdit=({props,actualizar})=>{
 
 
         <div className="modal-footer">
-          <button type='submit' className="btn btn-primary">Agregar</button>
+          <button type='submit' className="btn btn-primary">Actualizar</button>
         </div>
       </form>
-      
-        </>
-    )
+
+    </>
+  )
 }
 
 const initialValues = (nombre) => {
-    return {
-      nombre: nombre,
-      apellido: "",
-      nui: "",
-      fecha_inicio_tratamiento: "",
-      fecha_ingreso: "",
-      seguro_funebre: "",
-      telefono: "",
-      correo: "",
-      direccion_residencia: "",
-  
-  
-    };
-  }
+  return {
+    nombre: nombre,
+    apellido: "",
+    nui: "",
+    fecha_inicio_tratamiento: "",
+    fecha_ingreso: "",
+    seguro_funebre: "",
+    telefono: "",
+    correo: "",
+    direccion_residencia: "",
+  };
+}
+
+// const validationSchema = () => {
+//   return {
+//     nombre: Yup.string(),
+//     apellido: Yup.string(),
+//     tipo_persona: Yup.string(length = 255),
+//     estrato: Yup.number(),
+//     fecha_nacimiento: Yup.date(),
+//     telefono: Yup.number(),
+//     direccion: Yup.string(),
+//     correo: Yup.string().email("error en dato"),
+//     tiempo_apadrinando: Yup.number(),
+//     campo: Yup.string().email("error en dato"),
+
+
+//   }
+// }
