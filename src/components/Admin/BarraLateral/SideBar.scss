@@ -1,27 +1,15 @@
 .main {
-  margin-left: 200px;
-  padding: 0 20px;
-  width: 80%;
+  margin-left: 250px;
+  padding: 20px;
+  width: calc(100% - 250px);
+  font-family: sans-serif;
 }
-.espacio_tabla{
-  margin-right: 15%;
-}
-
-// h1 {
-//   color: #9b51e0;
-//   font-size: 3rem;
-//   text-align: center;
-//   text-shadow: 2px 2px #fcb900;
-//   padding-bottom: 30px;
-// }
 
 .sidebar {
-  // background-color: #9651d6;
-  background-color: #0c71c3;
-  // border-right: 9px solid #9651d6;
-  border-right: 9px solid rgba(0, 208, 132, 0.699);
-  color: #fff;
-  height: 100%;
+  background-color: #f7f7f7;
+  border-right: 1px solid #ccc;
+  color: #000;
+  height: 100vh;
   width: 250px;
   position: fixed;
   top: 0;
@@ -29,6 +17,7 @@
   z-index: 1;
   overflow-x: hidden;
   padding-top: 60px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-header {
@@ -36,12 +25,15 @@
   align-items: center;
   justify-content: center;
   height: 60px;
-  // background-color: rgb(0,208,130);
-  background-color: #9651d6;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar-header h3 {
+.sidebar-header h2 {
   margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
 }
 
 .sidebar-nav {
@@ -59,55 +51,40 @@
 }
 
 .sidebar-nav a {
-  color: #fff;
+  color: #333;
   display: flex;
   align-items: center;
   padding: 10px;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-  font-size: 20px;
+  font-size: 16px;
 }
 
-.sidebar-nav a i {
-  font-size: 20px;
+.sidebar-nav a svg {
+  font-size: 18px;
   margin-right: 10px;
 }
 
 .sidebar-nav a:hover {
-  // background-color: rgb(40,116,252);
-  border-bottom: 9px solid #9651d6;
-  border-left: 9px solid #fcb900;
-  border-radius: 20px;
+  background-color: #e5e5e5;
   cursor: pointer;
-  color: black;
 }
 
 .sidebar-nav a.active {
-  background-color: #ff6d00;
+  background-color: #d3d3d3;
+  color: #fff;
 }
 
-
-
-
-
-
-/*estilos otros*/
-
-
 @media only screen and (min-width: 768px) {
+  .sidebar a {
+    display: block;
+    color: #333;
+    padding: 16px;
+    text-decoration: none;
+  }
 
-
-	.sidebar a {
-		display: block;
-		color: #fff;
-		padding: 16px;
-		text-decoration: none;
-	}
-
-
-
-	.main {
-		margin-left: 200px;
-		padding: 0 20px;
-	}
+  .main {
+    margin-left: 250px;
+    padding: 20px;
+  }
 }

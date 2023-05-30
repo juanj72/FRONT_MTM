@@ -1,13 +1,33 @@
-.panelimg{
-    width: 50%;
-    margin-left: 250px;
+.HomeAdmin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 50px;
+  text-align: center;
 }
 
-.carousel{
-    width: 60%;
+.content {
+  max-width: 600px;
 }
-.datos{
-    padding-right: 50px;
-    padding-top: 50px;
-    width: 100%;
+
+.titleh {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.divider {
+  width: 60px;
+  height: 2px;
+  background-color: #333;
+  margin: 10px auto;
+}
+
+.description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
 }

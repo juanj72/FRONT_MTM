@@ -1,15 +1,42 @@
-.top-menu-admin{
-    &__logo{
-        width: 250px;
-        background: #0c71c3 !important;
-        
+.top-menu-admin {
+    &__logo {
+      width: 250px;
+      background: #e5e5e5 !important;
     }
-}
-.logo{
+  }
+  
+  .logo {
     width: 30px;
-}
-
-.icon2{
+  }
+  
+  .icon2 {
     color: rgb(210, 29, 255);
     width: 18px;
-}
+  }
+  
+  .top-menu-admin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #e5e5e5;
+    z-index: 100;
+  }
+  
+  .top-menu-admin .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: "Aboreto", sans-serif;
+  }
+  
+  .top-menu-admin .menu .menu-item .menu-link {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+  }
+  

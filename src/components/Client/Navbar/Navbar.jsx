@@ -3,7 +3,7 @@ import './Navbar.scss';
 
 const Navbar = () => {
   return (
-    <header>
+    <header className='header'>
       <nav className='navbar'>
         <div className='navbar-left'>
           <a className='nav-link' id='nav1'>Fundación mujeres trabajando por el Meta</a>
