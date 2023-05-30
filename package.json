@@ -10,12 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-three/drei": "^9.70.0",
-    "@react-three/fiber": "^8.13.0",
     "bootstrap": "^5.2.3",
-    "drei": "^2.2.21",
     "formik": "^2.2.9",
-    "gltfjsx": "^6.1.12",
     "gsap": "^3.11.5",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1",
@@ -23,13 +19,11 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",
-    "react-scroll": "^1.8.9",
     "sass": "^1.62.1",
-    "scrollmagic": "^2.0.8",
-    "scrollmagic-plugin-gsap": "^1.0.4",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.4",
-    "three": "^0.152.2",
+    "sweetalert2": "^11.7.8",
+    "sweetalert2-react-content": "^5.0.7",
     "yup": "^1.1.1"
   },
   "devDependencies": {
