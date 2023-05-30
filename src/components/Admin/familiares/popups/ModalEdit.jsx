@@ -5,7 +5,7 @@ import { BASE_API } from '../../../../utils/constants'
 import withReactContent from 'sweetalert2-react-content';
 import Swal from 'sweetalert2';
 
-const edit = null
+
 export const ModalEdit = ({ selectedFamiliar, actualizar }) => {
   let data = {}
 
@@ -19,14 +19,15 @@ export const ModalEdit = ({ selectedFamiliar, actualizar }) => {
   const MySwal = withReactContent(Swal);
 
   const formik = useFormik({
-    initialValues: initialValues(data.nombre),
+    initialValues: initialValues(data.nui),
+    
     // validationSchema: Yup.object(validationSchema()),
     onSubmit: (formValue) => {
       console.log("Datos enviados");
       const fetchData = async () => {
         const response = await fetch(`${BASE_API}/api/Familiar/${data.id}/`, { method: 'PATCH', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${TOKEN}` }, body: JSON.stringify(formValue) });
         const jsonData = await response.json();
-        console.log(jsonData)
+        // console.log(jsonData)
       };
       fetchData();
       actualizar()
@@ -95,9 +96,10 @@ export const ModalEdit = ({ selectedFamiliar, actualizar }) => {
   )
 }
 
-const initialValues = () => {
+const initialValues = (nui) => {
+  console.log(nui)
   return {
-    nui: "",
+    nui: nui,
     antecedentes_oncologicos: "",
     ocupacion: "",
     nombre: "",

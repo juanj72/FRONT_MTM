@@ -15,6 +15,24 @@ export const ModalEdit = ({ selectedPaciente, actualizar }) => {
     console.log(data)
   }
 
+
+  const initialValues = (nombre) => {
+    return {
+      nombre: nombre,
+      apellido: "",
+      nui: "",
+      fecha_inicio_tratamiento: "",
+      fecha_ingreso: "",
+      seguro_funebre: "",
+      telefono: "",
+      correo: "",
+      direccion_residencia: "",
+    };
+  }
+
+
+
+
   const TOKEN = getToken()
   const MySwal = withReactContent(Swal);
 

@@ -9,6 +9,8 @@ import { ModalEdit } from './popups/ModalEdit';
 import { DetailModal } from './popups/DetailModal';
 
 
+
+
 export const DataFamiliar = () => {
 
   const [data, setData] = useState([]);
@@ -32,7 +34,7 @@ export const DataFamiliar = () => {
   };
 
   const actualizar = () => {
-    window.location.reload(true);
+    fetchData();
   }
 
   const eliminar = async (id) => {
@@ -106,6 +108,16 @@ export const DataFamiliar = () => {
           </div>
         </div>
       </div>
+
+
+
+
+
+
+
+
+
+
 
 
       <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#exampleModal" > <BScons.BsPersonFillAdd /> Agregar</button>

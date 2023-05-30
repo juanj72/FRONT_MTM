@@ -35,7 +35,7 @@ export const padrinos = () => {
   };
 
   const actualizar = () => {
-    window.location.reload(true);
+    fetchData();
   }
 
   const eliminarPadrino = async (id) => {

@@ -7,6 +7,9 @@ import { DetailModal, ModalEdit } from '../pacientes/popups'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import * as MDcons from 'react-icons/md';
+import {AddPadrino} from '../../../components/Admin/familiares'
+
+
 
 
 export const DataPaciente = ({ props }) => {
@@ -55,7 +58,7 @@ export const DataPaciente = ({ props }) => {
   }
 
   const actualizar = async () => {
-    window.location.reload(true);
+   fetchData();
   }
 
   return (
@@ -114,6 +117,32 @@ export const DataPaciente = ({ props }) => {
           </div>
         </div>
       </div>
+
+
+
+
+    
+
+      <div className="modal fade" id="AddPadrino" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">Agregar padrino</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+             <AddPadrino paciente ={selectedPaciente}/>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
       <table className="table  table-hover">
         <thead>
           <tr>
@@ -128,6 +157,7 @@ export const DataPaciente = ({ props }) => {
             <th scope='col' >Telefono</th>
             <th scope='col' >Acción</th>
             <th scope='col' >Familiar </th>
+            <th scope='col'>Padrino</th>
 
           </tr>
         </thead>
@@ -149,6 +179,11 @@ export const DataPaciente = ({ props }) => {
               </td>
               <td> <button className='btn btn-info' altt="comunidad" ><MDcons.MdOutlineFamilyRestroom /></button>
                 <button className='btn btn-warning' alt="comunidad" ><MDcons.MdPersonAddAlt1 /></button>
+              </td>
+              <td>
+              <button className='btn btn-info' altt="comunidad" ><MDcons.MdOutlineFamilyRestroom /></button>
+                <button className='btn btn-warning' alt="comunidad"  data-bs-toggle="modal" data-bs-target="#AddPadrino" onClick={DetallePaciente.bind(null, item)} ><MDcons.MdPersonAddAlt1 /></button>
+
               </td>
             </tr>
           ))}
