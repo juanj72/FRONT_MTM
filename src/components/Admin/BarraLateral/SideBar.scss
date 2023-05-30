@@ -1,26 +1,6 @@
-.main {
-  margin-left: 200px;
-  padding: 0 20px;
-  width: 80%;
-}
-.espacio_tabla{
-  margin-right: 15%;
-}
-
-// h1 {
-//   color: #9b51e0;
-//   font-size: 3rem;
-//   text-align: center;
-//   text-shadow: 2px 2px #fcb900;
-//   padding-bottom: 30px;
-// }
-
 .sidebar {
-  // background-color: #9651d6;
-  background-color: #0c71c3;
-  // border-right: 9px solid #9651d6;
-  border-right: 9px solid rgba(0, 208, 132, 0.699);
-  color: #fff;
+  background-color: #f5f5f7;
+  color: #000;
   height: 100%;
   width: 250px;
   position: fixed;
@@ -36,12 +16,13 @@
   align-items: center;
   justify-content: center;
   height: 60px;
-  // background-color: rgb(0,208,130);
-  background-color: #9651d6;
+  background-color: #f5f5f7;
 }
 
-.sidebar-header h3 {
+.sidebar-header h2 {
   margin: 0;
+  font-size: 32px;
+  color: #0070c9;
 }
 
 .sidebar-nav {
@@ -59,7 +40,7 @@
 }
 
 .sidebar-nav a {
-  color: #fff;
+  color: #000;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -68,46 +49,16 @@
   font-size: 20px;
 }
 
-.sidebar-nav a i {
+.sidebar-nav a svg {
   font-size: 20px;
   margin-right: 10px;
 }
 
 .sidebar-nav a:hover {
-  // background-color: rgb(40,116,252);
-  border-bottom: 9px solid #9651d6;
-  border-left: 9px solid #fcb900;
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: 20px;
-  cursor: pointer;
-  color: black;
 }
 
 .sidebar-nav a.active {
-  background-color: #ff6d00;
-}
-
-
-
-
-
-
-/*estilos otros*/
-
-
-@media only screen and (min-width: 768px) {
-
-
-	.sidebar a {
-		display: block;
-		color: #fff;
-		padding: 16px;
-		text-decoration: none;
-	}
-
-
-
-	.main {
-		margin-left: 200px;
-		padding: 0 20px;
-	}
+  background-color: rgba(0, 0, 0, 0.2);
 }
