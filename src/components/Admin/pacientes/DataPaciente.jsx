@@ -3,7 +3,7 @@ import { getToken } from '../../../api/token'
 import * as BScons from 'react-icons/bs';
 import * as Aicons from 'react-icons/ai';
 import { AddPaciente } from '../../../components/Admin/pacientes'
-import { DetailModal, ModalEdit } from '../pacientes/popups'
+import { DetailModal, ModalEdit,ListarPadrinos } from '../pacientes/popups'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import * as MDcons from 'react-icons/md';
@@ -156,6 +156,25 @@ export const DataPaciente = ({ props }) => {
 
 
 
+      <div className="modal fade" id="ListarPadrinos" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">Listar padrino</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+
+              <ListarPadrinos paciente={selectedPaciente}/>
+              
+             
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
 
 
 
@@ -197,7 +216,7 @@ export const DataPaciente = ({ props }) => {
                 <button className='btn btn-warning' alt="comunidad" ><MDcons.MdPersonAddAlt1 /></button>
               </td>
               <td>
-              <button className='btn btn-info' altt="comunidad" ><Aicons.AiFillEye /></button>
+              <button className='btn btn-info' altt="comunidad" data-bs-toggle="modal" data-bs-target="#ListarPadrinos" onClick={DetallePaciente.bind(null, item)}  ><Aicons.AiFillEye /></button>
                 <button className='btn btn-warning' alt="comunidad"  data-bs-toggle="modal" data-bs-target="#AddPadrino" onClick={DetallePaciente.bind(null, item)} ><MDcons.MdPersonAddAlt1 /></button>
 
               </td>
