@@ -24,7 +24,7 @@ export const ListarPadrinos = ({paciente}) =>{
     
             console.log(response);    
             }
-             
+              
           }; 
 
       
