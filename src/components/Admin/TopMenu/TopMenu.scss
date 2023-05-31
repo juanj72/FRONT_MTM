@@ -1,28 +1,27 @@
 .top-menu-admin {
-    &__logo {
-      width: 250px;
-      background: #e5e5e5 !important;
-    }
+  &__logo {
+    width: 250px;
+    background: #000;
   }
-  
+
   .logo {
     width: 30px;
   }
-  
+
   .icon2 {
-    color: rgb(210, 29, 255);
+    color: #007aff;
     width: 18px;
   }
-  
+
   .top-menu-admin {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #e5e5e5;
+    background: #000;
     z-index: 100;
   }
-  
+
   .top-menu-admin .menu {
     display: flex;
     justify-content: space-between;
@@ -33,10 +32,19 @@
     margin: 0 auto;
     font-family: "Aboreto", sans-serif;
   }
-  
+
   .top-menu-admin .menu .menu-item .menu-link {
     font-size: 14px;
-    color: #000;
+    color: #fff;
     text-decoration: none;
   }
-  
+
+  .top-menu-admin .menu .menu-item .menu-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+  }
+
+  .top-menu-admin .menu .menu-item .menu-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

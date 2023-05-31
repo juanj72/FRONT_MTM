@@ -1,9 +1,9 @@
 import './SideBar.scss';
 import { NavLink, Link } from 'react-router-dom';
-import { MdFoundation } from 'react-icons/md';
 import { FaHome, FaChild } from 'react-icons/fa';
 import { FiUsers } from 'react-icons/fi';
-import { BsFillMoonFill, BsFillPersonFill } from 'react-icons/bs';
+import { BsFillMoonFill } from 'react-icons/bs';
+import { MdOutlineFamilyRestroom, MdFoundation } from 'react-icons/md';
 
 export const BarraLateral = () => {
   return (
@@ -11,7 +11,7 @@ export const BarraLateral = () => {
       <div className="sidebar">
         <div className="sidebar-header">
           <h2>
-            <MdFoundation /> MTM
+            <MdFoundation />MTM
           </h2>
         </div>
         <nav className="sidebar-nav">
@@ -38,7 +38,7 @@ export const BarraLateral = () => {
             </li>
             <li>
               <Link to="/admin/familiares">
-                <BsFillPersonFill /> Familiares
+                <MdOutlineFamilyRestroom /> Familiares
               </Link>
             </li>
           </ul>

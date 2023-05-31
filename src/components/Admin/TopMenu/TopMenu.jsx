@@ -2,8 +2,8 @@ import './TopMenu.scss';
 import { useAuth } from '../../../hooks';
 import { NavLink, Link } from 'react-router-dom';
 import { Icon, Menu } from 'semantic-ui-react';
-import { FiLogOut } from 'react-icons/fi';
-import { FcHome } from 'react-icons/fc';
+import { RiLogoutBoxLine } from 'react-icons/ri';
+import { FaHome } from 'react-icons/fa';
 
 export const TopMenu = () => {
   const { auth, logout } = useAuth();
@@ -26,13 +26,13 @@ export const TopMenu = () => {
         />
       </Menu.Item>
       <Menu.Menu position="right">
-        <Menu.Item>Hola, {renderName()} </Menu.Item>
+        <Menu.Item>Hi, {renderName()}</Menu.Item>
         <Menu.Item onClick={logout}>
-          <FiLogOut className="icon2" />
+          <RiLogoutBoxLine className="icon2" />
         </Menu.Item>
         <Menu.Item>
           <Link to="/">
-            <FcHome />
+            <FaHome />
           </Link>
         </Menu.Item>
       </Menu.Menu>

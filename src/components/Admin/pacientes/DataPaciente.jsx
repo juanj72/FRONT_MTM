@@ -7,7 +7,7 @@ import { DetailModal, ModalEdit,ListarPadrinos } from '../pacientes/popups'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import * as MDcons from 'react-icons/md';
-import {AddPadrino} from '../../../components/Admin/familiares'
+import {AddPadrino,AddFamiliarPaciente} from '../../../components/Admin/familiares'
 
 
 
@@ -153,6 +153,20 @@ export const DataPaciente = ({ props }) => {
           </div>
         </div>
       </div>
+      <div className="modal fade" id="AddFamiliarPaciente" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">Agregar familiar</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+             <AddFamiliarPaciente paciente ={selectedPaciente}/>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
 
 
@@ -212,8 +226,8 @@ export const DataPaciente = ({ props }) => {
                 <button className='btn btn-primary' data-bs-toggle="modal" data-bs-target="#DetalleModal" onClick={DetallePaciente.bind(null, item)} ><Aicons.AiFillEye /></button>
                 <button className='btn btn-danger' onClick={eliminarPaciente.bind(null, item.id)} ><BScons.BsFillTrashFill /></button>
               </td>
-              <td> <button className='btn btn-info' altt="comunidad" ><Aicons.AiFillEye /></button>
-                <button className='btn btn-warning' alt="comunidad" ><MDcons.MdPersonAddAlt1 /></button>
+             <td> 
+              <button className='btn btn-warning' alt="comunidad"  data-bs-toggle="modal" data-bs-target="#AddFamiliarPaciente" onClick={DetallePaciente.bind(null, item)} ><MDcons.MdPersonAddAlt1 /></button>
               </td>
               <td>
               <button className='btn btn-info' altt="comunidad" data-bs-toggle="modal" data-bs-target="#ListarPadrinos" onClick={DetallePaciente.bind(null, item)}  ><Aicons.AiFillEye /></button>

@@ -1,20 +1,12 @@
-.main {
-  margin-left: 250px;
-  padding: 20px;
-  width: calc(100% - 250px);
-  font-family: sans-serif;
-}
-
 .sidebar {
-  background-color: #f7f7f7;
-  border-right: 1px solid #ccc;
+  background-color: #f5f5f7;
   color: #000;
-  height: 100vh;
+  height: 100%;
   width: 250px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 100;
   overflow-x: hidden;
   padding-top: 60px;
   box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
@@ -24,16 +16,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 60px;
-  background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  height: 80px;
+  margin-left: -25px;
+  background-color: #f5f5f7;
 }
 
 .sidebar-header h2 {
   margin: 0;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
+  font-size: 32px;
+  color: #C293FA;
 }
 
 .sidebar-nav {
@@ -44,6 +35,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .sidebar-nav li {
@@ -51,7 +44,7 @@
 }
 
 .sidebar-nav a {
-  color: #333;
+  color: #000;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -61,30 +54,15 @@
 }
 
 .sidebar-nav a svg {
-  font-size: 18px;
+  font-size: 20px;
   margin-right: 10px;
 }
 
 .sidebar-nav a:hover {
-  background-color: #e5e5e5;
-  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 
 .sidebar-nav a.active {
-  background-color: #d3d3d3;
-  color: #fff;
-}
-
-@media only screen and (min-width: 768px) {
-  .sidebar a {
-    display: block;
-    color: #333;
-    padding: 16px;
-    text-decoration: none;
-  }
-
-  .main {
-    margin-left: 250px;
-    padding: 20px;
-  }
+  background-color: rgba(0, 0, 0, 0.2);
 }
